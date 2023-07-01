@@ -8,8 +8,15 @@ This is my personal website where I plan to just generally mess around and exper
 
 ## Tech Stack
 
+### Main Frontend
+
 - [SST](sst.dev) - Serverless Stack Toolkit
 - [SEED](seed.run) - Serverless CI/CD
-- TBD
+- [SvelteKit](https://kit.svelte.dev/) - Svelte Awesomeness
+- [Skeleton](https://www.skeleton.dev/) - UI Toolkit for Svelte using [TailwindCSS](https://tailwindcss.com/)
+
+### Backend
+
+TBD
 
 
