@@ -1,5 +1,6 @@
 import { SSTConfig } from "sst";
 import { BaseApi } from "./stacks/BaseApi";
+import { Frontend } from "./stacks/Frontend";
 
 export default {
   config(_input) {
@@ -11,5 +12,6 @@ export default {
   },
   stacks(app) {
     app.stack(BaseApi);
+    app.stack(Frontend);
   }
 } satisfies SSTConfig;
