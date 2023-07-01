@@ -5,7 +5,7 @@ export function Frontend({ stack }: StackContext) {
   const site = new StaticSite(stack, "SvelteSkeleton", {
     path: "packages/frontend",
     buildCommand: "npm run build",
-    buildOutput: "dist",
+    buildOutput: ".svelte-kit/output",
   });
 
   // Show the URLs in the output
