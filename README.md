@@ -1,4 +1,4 @@
-# dex2.io
+# dexv2.com
 
 This is my personal website where I plan to just generally mess around and experiment with stuff. I'll likely incorporate a lot of different things here on the primary domain and different subdomains so it'll be a smorgasbord of various technologies and ideas. 
 
