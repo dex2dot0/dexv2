@@ -6,7 +6,7 @@ export function BaseApi({ stack }: StackContext) {
 
   const api = new Api(stack, "BaseApi", {
     customDomain: {
-      domainName: dns.domain,
+      domainName: `api.${dns.domain}`,
       hostedZone: dns.zone,
     },
     routes: {
