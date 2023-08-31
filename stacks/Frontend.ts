@@ -7,7 +7,7 @@ export function Frontend({ stack }: StackContext) {
   // Deploy the Svelte frontend
   const site = new SvelteKitSite(stack, "SvelteSkeleton", {
     customDomain: {
-      domainName: dns.domain,
+      domainName: `$*.${dns.domain}`,
       hostedZone: dns.zone,
     },
     path: "packages/frontend",
