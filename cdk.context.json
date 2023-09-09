@@ -1,0 +1,10 @@
+{
+  "hosted-zone:account=149632196767:domainName=dev.dexv2.com:region=us-west-2": {
+    "Id": "/hostedzone/Z08961161BOEX0PI567JX",
+    "Name": "dev.dexv2.com."
+  },
+  "hosted-zone:account=149632196767:domainName=dexv2.com:region=us-west-2": {
+    "Id": "/hostedzone/Z03052693K28SE04EF1F9",
+    "Name": "dexv2.com."
+  }
+}
