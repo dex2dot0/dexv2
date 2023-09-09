@@ -1,13 +1,13 @@
 import { StackContext, Api, use} from "sst/constructs";
 import { DNS } from "./DNS";
 
-export function BaseApi({ stack }: StackContext) {
+export function BaseApi({ app, stack }: StackContext) {
   const dns = use(DNS);
 
   const api = new Api(stack, "BaseApi", {
     customDomain: {
-      domainName: `api.${dns.domain}`,
-      hostedZone: dns.zone,
+      domainName: `api.${dns.zone}`,
+      hostedZone: dns.domain
     },
     routes: {
       "GET /": "packages/functions/src/lambda.handler"
@@ -15,6 +15,6 @@ export function BaseApi({ stack }: StackContext) {
   });
 
   stack.addOutputs({
-    ApiEndpoint: api.url,
+    ApiEndpoint: api.customDomainUrl,
   });
 }

@@ -1,13 +1,15 @@
 import { StackContext } from "sst/constructs";
 
-const getDomain = (appStage: string) => {
-    return appStage != "dev" ? `${appStage}.dev.dexv2.com` : "dev.dexv2.com";
-};
+const baseDomain = process.env.BASE_DOMAIN;
+
+// const getDomain = (appStage: string) => {
+//     return appStage != "dev" ? `${appStage}.dev.${baseDomain}` : `dev.${baseDomain}`;
+// };
 
 export function DNS({ stack, app }: StackContext) {
-    const subDomain = getDomain(app.stage);
-    const zone = app.stage == "production" ? "dexv2.com" : "dev.dexv2.com";
-    const domain = app.stage == "production" ? "dexv2.com" : subDomain;
+    //const subDomain = getDomain(app.stage);
+    const zone = app.stage == "production" ? baseDomain : `${app.stage}.${baseDomain}`;
+    const domain = baseDomain;
 
     return {
         zone,
