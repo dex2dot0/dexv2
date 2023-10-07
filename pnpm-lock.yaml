@@ -21,6 +21,13 @@ importers:
         version: 5.1.6
 
   packages/frontend:
+    dependencies:
+      svelte-headlessui:
+        specifier: ^0.0.26
+        version: 0.0.26(svelte@3.59.2)
+      svelte-transition:
+        specifier: ^0.0.10
+        version: 0.0.10(svelte@3.59.2)
     devDependencies:
       '@floating-ui/dom':
         specifier: ^1.5.2
@@ -31,6 +38,9 @@ importers:
       '@skeletonlabs/skeleton':
         specifier: ^2.1.0
         version: 2.1.0(svelte@3.59.2)
+      '@skeletonlabs/tw-plugin':
+        specifier: ^0.2.0
+        version: 0.2.0(tailwindcss@3.3.3)
       '@sveltejs/adapter-auto':
         specifier: ^2.1.0
         version: 2.1.0(@sveltejs/kit@1.25.0)
@@ -2761,6 +2771,14 @@ packages:
     dependencies:
       esm-env: 1.0.0
       svelte: 3.59.2
+    dev: true
+
+  /@skeletonlabs/tw-plugin@0.2.0(tailwindcss@3.3.3):
+    resolution: {integrity: sha512-Mtao12JMrmlYvhv9AfvKNBd5qz+v5MImMG9tri++/4FUORAmzB3F3Qq9+ukfdDtoPT/+Q1CRPn1CL05gDxsKSQ==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0'
+    dependencies:
+      tailwindcss: 3.3.3
     dev: true
 
   /@smithy/abort-controller@1.0.1:
@@ -7845,6 +7863,14 @@ packages:
       svelte: 3.59.2
     dev: true
 
+  /svelte-headlessui@0.0.26(svelte@3.59.2):
+    resolution: {integrity: sha512-JZ8hO9uPirtMnEhbESXcbNDQQ5JmoCt5qDY8zG0nj2oKaYiGpjNs98du2HJ+SwDBMl0lKv/B5Ar/ItTuaVNx5w==}
+    dependencies:
+      svelte-transition: 0.0.10(svelte@3.59.2)
+    transitivePeerDependencies:
+      - svelte
+    dev: false
+
   /svelte-hmr@0.15.3(svelte@3.59.2):
     resolution: {integrity: sha512-41snaPswvSf8TJUhlkoJBekRrABDXDMdpNpT2tfHIv4JuhgvHqLMhEPGtaQn0BmbNSTkuz2Ed20DF2eHw0SmBQ==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -7907,10 +7933,17 @@ packages:
       typescript: 5.2.2
     dev: true
 
+  /svelte-transition@0.0.10(svelte@3.59.2):
+    resolution: {integrity: sha512-BN8XDA7dKyuh+Lmdn3vxCzJd3M7L4BLdRziIAJew2AiBFMcrJJg8srEMYYoTCOLtYJ2Oqlv3+3/K5b6uHM8LSg==}
+    peerDependencies:
+      svelte: ^3.59.1 || ^4.0.0
+    dependencies:
+      svelte: 3.59.2
+    dev: false
+
   /svelte@3.59.2:
     resolution: {integrity: sha512-vzSyuGr3eEoAtT/A6bmajosJZIUWySzY2CzB3w2pgPvnkUjGqlDnsNnA0PMO+mMAhuyMul6C2uuZzY6ELSkzyA==}
     engines: {node: '>= 8'}
-    dev: true
 
   /table@6.8.1:
     resolution: {integrity: sha512-Y4X9zqrCftUhMeH2EptSSERdVKt/nEdijTOacGD/97EKjhQ/Qs8RTlEGABSJNNN8lac9kheH+af7yAkEWlgneA==}

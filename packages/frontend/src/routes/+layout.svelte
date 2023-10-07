@@ -1,49 +1,51 @@
 <script lang='ts'>
-	// The ordering of these imports is critical to your app working properly
-	import '@skeletonlabs/skeleton/themes/theme-rocket.css';
-	// If you have source.organizeImports set to true in VSCode, then it will auto change this ordering
-	import '@skeletonlabs/skeleton/styles/skeleton.css';
-	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
-	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { AppBar, LightSwitch, autoModeWatcher } from '@skeletonlabs/skeleton';
+	import { createMenu } from 'svelte-headlessui'
+	import Transition from 'svelte-transition';
+
+	const menu = createMenu({ label: 'Actions' })
+
+	const menuLinks = [{
+		name: 'Home',
+		href: '/',
+	}, {
+		name: 'About',
+		href: '/about',
+	}, {
+		name: 'Contact',
+		href: '/contact',
+	}];
 </script>
 
-<!-- App Shell -->
-<AppShell>
-	<svelte:fragment slot="header">
-		<!-- App Bar -->
-		<AppBar>
-			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
-			</svelte:fragment>
-			<svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
+<svelte:head>{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}</svelte:head>
+<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
+	<svelte:fragment slot="lead"><LightSwitch /></svelte:fragment>
+	<span class="h3 gradient-heading">@dex2dot0</span>
+	<svelte:fragment slot="trail">
+		<div class="relative inline-block">
+		<button use:menu.button type="button" class="btn-icon bg-gradient-to-br variant-gradient-primary-secondary"><img alt="menu dropdown button" src="/icons/feather/24/menu.svg"/></button>
+		<Transition
+				show={$menu.expanded}
+				enter="transition ease-out duration-100"
+				enterFrom="transform opacity-0 scale-95"
+				enterTo="transform opacity-100 scale-100"
+				leave="transition ease-in duration-75"
+				leaveFrom="transform opacity-100 scale-100"
+				leaveTo="transform opacity-0 scale-95"
+			>
+				<div
+					use:menu.items
+					class="absolute z-50 right-0 mt-2 w-56 origin-top-right divide-y divide-secondary-800 rounded-md bg-gradient-to-br variant-gradient-primary-secondary shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
 				>
-					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
-			</svelte:fragment>
-		</AppBar>
+					{#each menuLinks as menuLink}
+						<div class="px-1 py-1 text-center z-50">
+							<a class="block p-2 w-full text-xl hover:variant-gradient-secondary-tertiary" href={menuLink.href}>{menuLink.name}</a>
+						</div>
+					{/each}
+				</div>
+			</Transition>
+		</div>
 	</svelte:fragment>
-	<!-- Page Route Content -->
-	<slot />
-</AppShell>
+</AppBar>
+<slot />

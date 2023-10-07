@@ -1,38 +1,37 @@
-# create-svelte
+# Main Frontend
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Svelte based frontend for the main website.
 
-## Creating a project
+## Tech
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [x] [Svelte](https://svelte.dev/)
+- [x] [SvelteKit](https://kit.svelte.dev/)
+- [x] [TailwindCSS](https://www.skeleton.dev/elements/core)
+- [x] [Skeleton UI](https://www.skeleton.dev/)
+- [x] [Svelte Headless UI](https://captaincodeman.github.io/svelte-headlessui/)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Pre-requisites
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- [Node.js](https://nodejs.org/en/) >= 18.0.0 or LTS
+- [pnpm](https://pnpm.io/) >= 6.0.0
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install all dependencies
+```pnpm install```
 
-```bash
-npm run dev
+Run the development server
+```pnpm run dev```
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+Make magic happen :tada:
 
 ## Building
 
 To create a production version of your app:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with `pnpm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
