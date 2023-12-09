@@ -75,7 +75,7 @@
 	];
 	const logos: any[] = [];
 
-	for (let i = 0; i < 100; i++) {
+	for (let i = 0; i < 20; i++) {
 		logoList.map((logo) => logos.push(logo));
 	}
 </script>
@@ -83,7 +83,7 @@
 <div class="logo-container">
 	{#each logos as Logo}
 		<div>
-			<Logo isSelected={false} />
+			<Logo isSelected={true} />
 		</div>
 	{/each}
 </div>

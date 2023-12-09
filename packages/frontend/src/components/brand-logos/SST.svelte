@@ -4,7 +4,7 @@
 
 <svg
 	class={isSelected
-		? 'rounded-full bg-gradient-to-r from-surface-500 fill-secondary-500 stroke-secondary-800 w-12 h-12'
+		? 'fill-tertiary-500 stroke-tertiary-800 w-12 h-12'
 		: 'fill-surface-200/30 stroke-surface-500/30 w-8 h-8'}
 	width="256px"
 	height="197px"
