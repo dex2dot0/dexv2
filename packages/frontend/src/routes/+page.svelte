@@ -82,8 +82,7 @@
 				on:mouseover={() => onHover(7)}
 				class="h-1/3 flex flex-col items-center justify-center"
 			>
-			<span class={currentDivFocus === '7' ? 'text-primary-600 text-lg underline' : ''}>Mortgage</span> 
-			<span class={currentDivFocus === '7' ? 'text-primary-600 text-lg underline' : ''}>Tech</span>
+			<span class={currentDivFocus === '7' ? 'text-primary-600 text-lg underline' : ''}>Serverless</span> 
 			</div>
 		</div>
 		<div>

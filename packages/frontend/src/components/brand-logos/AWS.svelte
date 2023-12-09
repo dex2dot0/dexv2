@@ -3,7 +3,7 @@
 </script>
 
 <svg
-class={isSelected ? "rounded-full bg-gradient-to-r from-surface-500 fill-secondary-500 stroke-secondary-800 w-12 h-12" : "fill-surface-200/30 stroke-surface-500/30 w-8 h-8"}
+    class={isSelected ? "rounded-full bg-gradient-to-r from-surface-500 fill-secondary-500 stroke-secondary-800 w-12 h-12" : "fill-surface-200/30 stroke-surface-500/30 w-8 h-8"}
 	height="1465"
 	viewBox="-.1 1.1 304.9 179.8"
 	width="2500"
