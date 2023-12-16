@@ -74,7 +74,7 @@
 
 	const logos: Logo[] = [];
 
-	for (let i = 0; i < 10; i++) {
+	for (let i = 0; i < 15; i++) {
 		logoList.map((logo: Logo) => logos.push(logo));
 	}
 </script>
@@ -96,8 +96,9 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100vw;
-		height: 100vh;
+		width: 105vw;
+		height: 105vh;
+		margin-left: -2rem;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-start;
