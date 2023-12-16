@@ -107,9 +107,4 @@
 	.logo-container > div {
 		margin: 1rem; /* Adjust the gap between logos */
 	}
-
-	.logo-container > div > svg {
-		overflow: hidden; /* Allow logos to overflow the container */
-		position: absolute;
-	}
 </style>
