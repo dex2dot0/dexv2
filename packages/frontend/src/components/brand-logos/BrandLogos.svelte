@@ -77,8 +77,6 @@
 	for (let i = 0; i < 10; i++) {
 		logoList.map((logo: Logo) => logos.push(logo));
 	}
-
-	const isSelected = false;
 </script>
 
 <div class="logo-container">
