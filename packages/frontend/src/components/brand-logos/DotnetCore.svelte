@@ -1,15 +1,8 @@
 <script lang="ts">
-	export let isSelected: boolean = false;
+	export let className: string = '';
 </script>
 
-<svg
-	class={isSelected
-		? 'fill-tertiary-500 stroke-tertiary-800 w-12 h-12'
-		: 'fill-surface-200/30 stroke-surface-500/30 w-8 h-8'}
-	id="Layer_1"
-	xmlns="http://www.w3.org/2000/svg"
-	viewBox="0 0 64 64"
->
+<svg class={className} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 	<defs>
 		<style>
 			.cls-2 {

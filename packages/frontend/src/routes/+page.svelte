@@ -15,6 +15,28 @@
 		handleResize();
 	});
 
+	// create a map of currentDivFocus to category
+	const categoryMap: { [key: string]: string } = {
+		'0': '',
+		'1': 'api',
+		'3': 'webdev',
+		'4': 'agile',
+		'6': 'data',
+		'7': 'serverless',
+		'9': 'devops',
+		'11': 'cloud',
+		'12': 'fullstack'
+	};
+
+	let currentCategory: string = '';
+
+	const getCategory = () => {
+		currentCategory = categoryMap[currentDivFocus];
+	};
+
+	// set current category
+	getCategory();
+
 	function handleResize() {
 		const width = window.innerWidth;
 
@@ -45,8 +67,10 @@
 		const currentDivFocusIndex = divIds.indexOf(currentDivFocus);
 		if (currentDivFocusIndex === divIds.length - 1) {
 			currentDivFocus = '0';
+			getCategory();
 		} else {
 			currentDivFocus = divIds[currentDivFocusIndex + 1];
+			getCategory();
 		}
 		imageSrc = `/images/holga_${currentDivFocus}.png`;
 	};
@@ -54,35 +78,30 @@
 	const onHover = (section: number) => {
 		currentDivFocus = String(section);
 		imageSrc = `/images/holga_${section}.png`;
+		getCategory();
 	};
 </script>
 
 <div class="absolute flex left-0 -z-10">
-	<BrandLogos cloudSelected={currentDivFocus === '11'}/>
+	<BrandLogos {currentCategory} />
 </div>
 <div class="h-full w-full flex items-center justify-center">
 	<div class="grid grid-cols-3 h-full w-full text-center align-middle">
 		<div>
-			<div
-				id="11"
-				on:mouseover={() => onHover(11)}
-				class="h-1/3 flex items-center justify-center"
-			>
-				<span class={currentDivFocus === '11' ? 'text-primary-600 text-lg underline' : ''}>Cloud</span>
+			<div id="11" on:mouseover={() => onHover(11)} class="h-1/3 flex items-center justify-center">
+				<span class={currentDivFocus === '11' ? 'focus-heading' : 'non-focus-heading'}>Cloud</span>
 			</div>
-			<div
-				id="9"
-				on:mouseover={() => onHover(9)}
-				class="h-1/3 flex items-center justify-center"
-			>
-			<span class={currentDivFocus === '9' ? 'text-primary-600 text-lg underline' : ''}>DevOps</span>
+			<div id="9" on:mouseover={() => onHover(9)} class="h-1/3 flex items-center justify-center">
+				<span class={currentDivFocus === '9' ? 'focus-heading' : 'non-focus-heading'}>DevOps</span>
 			</div>
 			<div
 				id="7"
 				on:mouseover={() => onHover(7)}
 				class="h-1/3 flex flex-col items-center justify-center"
 			>
-			<span class={currentDivFocus === '7' ? 'text-primary-600 text-lg underline' : ''}>Serverless</span> 
+				<span class={currentDivFocus === '7' ? 'focus-heading' : 'non-focus-heading'}
+					>Serverless</span
+				>
 			</div>
 		</div>
 		<div>
@@ -91,12 +110,13 @@
 				on:mouseover={() => onHover(12)}
 				class="h-1/3 flex flex-col items-center justify-center"
 			>
-			<span class={currentDivFocus === '12' ? 'text-primary-600 text-lg underline' : ''}>Full-</span>
-			<span class={currentDivFocus === '12' ? 'text-primary-600 text-lg underline' : ''}>Stack</span>
+				<span class={currentDivFocus === '12' ? 'focus-heading' : 'non-focus-heading'}
+					>Full-Stack</span
+				>
 			</div>
 			<div id="0" on:mouseover={() => onHover(0)} class="grid place-content-center w-full h-1/3">
 				<figure class="w-full h-full">
-					<section class="img-bg"/>
+					<section class="img-bg" />
 					<img width="200" height="200" src={imageSrc} alt="headshot" />
 				</figure>
 			</div>
@@ -105,32 +125,24 @@
 				on:mouseover={() => onHover(6)}
 				class="h-1/3 flex flex-col items-center justify-center"
 			>
-			<span class={currentDivFocus === '6' ? 'text-primary-600 text-lg underline' : ''}>Data & </span>
-			<span class={currentDivFocus === '6' ? 'text-primary-600 text-lg underline' : ''}>Business Intelligence</span>
+				<span class={currentDivFocus === '6' ? 'focus-heading' : 'non-focus-heading'}>Data</span>
 			</div>
 		</div>
 		<div>
-			<div
-				id="1"
-				on:mouseover={() => onHover(1)}
-				class="h-1/3 flex items-center justify-center"
-			>
-			<span class={currentDivFocus === '1' ? 'text-primary-600 text-lg underline' : ''}>APIs</span>
+			<div id="1" on:mouseover={() => onHover(1)} class="h-1/3 flex items-center justify-center">
+				<span class={currentDivFocus === '1' ? 'focus-heading' : 'non-focus-heading'}>APIs</span>
 			</div>
 			<div
 				id="3"
 				on:mouseover={() => onHover(3)}
 				class="h-1/3 flex flex-col items-center justify-center"
 			>
-			<span class={currentDivFocus === '3' ? 'text-primary-600 text-lg underline' : ''}>Web</span>
-			<span class={currentDivFocus === '3' ? 'text-primary-600 text-lg underline' : ''}>Development</span>
+				<span class={currentDivFocus === '3' ? 'focus-heading bg-tertiary' : 'non-focus-heading'}
+					>WebDev</span
+				>
 			</div>
-			<div
-				id="4"
-				on:mouseover={() => onHover(4)}
-				class="h-1/3 flex items-center justify-center"
-			>
-			<span class={currentDivFocus === '4' ? 'text-primary-600 text-lg underline' : ''}>Agile</span>
+			<div id="4" on:mouseover={() => onHover(4)} class="h-1/3 flex items-center justify-center">
+				<span class={currentDivFocus === '4' ? 'focus-heading' : 'non-focus-heading'}>Agile</span>
 			</div>
 		</div>
 	</div>
@@ -167,5 +179,23 @@
 		70% {
 			transform: scale(2);
 		}
+	}
+
+	.focus-heading {
+		@apply text-primary-600;
+		@apply bg-surface-100 dark:bg-surface-800;
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
+		font-size: x-large;
+		padding: 2rem;
+		border-radius: 0.5em;
+	}
+
+	.non-focus-heading {
+		@apply text-secondary-400;
+		@apply bg-surface-100 dark:bg-surface-800;
+		font-size: x-large;
+		padding: 0.5rem;
+		border-radius: 0.5em;
 	}
 </style>

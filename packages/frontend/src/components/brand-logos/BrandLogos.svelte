@@ -31,59 +31,64 @@
 	import Wordpress from './Wordpress.svelte';
 	import Zuplo from './Zuplo.svelte';
 
-	export let cloudSelected: boolean = false;
-	export let fullStackSelected: boolean = false;
-	export let apisSelected: boolean = false;
-	export let devopsSelected: boolean = false;
-	export let webDevSelected: boolean = false;
-	export let mortechSelected: boolean = false;
-	export let dataSelected: boolean = false;
-	export let agileSelected: boolean = false;
+	export let currentCategory: string = '';
 
-	const logoList: any[] = [
-		Amplify,
-		AWS,
-		Azure,
-		Cloudflare,
-		Csharp,
-		CSS,
-		Docker,
-		DotnetCore,
-		Dynamo,
-		Fastify,
-		Github,
-		Go,
-		Html,
-		Jira,
-		Lambda,
-		Mongo,
-		MySql,
-		Mui,
-		Netlify,
-		Next,
-		Postman,
-		PowerBI,
-		React,
-		Remix,
-		SST,
-		Svelte,
-		Tailwind,
-		Terraform,
-		Typescript,
-		Wordpress,
-		Zuplo
+	type Logo = {
+		Component: any;
+		Category: string[];
+	};
+
+	const logoList: Logo[] = [
+		{ Component: Amplify, Category: ['cloud', 'fullstack', 'devops', 'webdev', 'serverless'] },
+		{ Component: AWS, Category: ['cloud', 'fullstack', 'devops', 'webdev', 'serverless'] },
+		{ Component: Azure, Category: ['cloud', 'fullstack', 'devops', 'webdev', 'serverless'] },
+		{ Component: Cloudflare, Category: ['cloud', 'fullstack', 'webdev', 'serverless'] },
+		{ Component: Csharp, Category: ['api'] },
+		{ Component: CSS, Category: ['webdev'] },
+		{ Component: Docker, Category: ['fullstack', 'devops'] },
+		{ Component: DotnetCore, Category: ['api'] },
+		{ Component: Dynamo, Category: ['data', 'cloud', 'serverless'] },
+		{ Component: Fastify, Category: ['api'] },
+		{ Component: Github, Category: ['agile'] },
+		{ Component: Go, Category: ['api'] },
+		{ Component: Html, Category: ['webdev'] },
+		{ Component: Jira, Category: ['agile'] },
+		{ Component: Lambda, Category: ['cloud', 'serverless'] },
+		{ Component: Mongo, Category: ['data'] },
+		{ Component: MySql, Category: ['data'] },
+		{ Component: Mui, Category: ['webdev'] },
+		{ Component: Netlify, Category: ['webdev', 'serverless'] },
+		{ Component: Next, Category: ['webdev', 'fullstack'] },
+		{ Component: Postman, Category: ['api'] },
+		{ Component: PowerBI, Category: ['data'] },
+		{ Component: React, Category: ['webdev'] },
+		{ Component: Remix, Category: ['webdev', 'fullstack'] },
+		{ Component: SST, Category: ['cloud', 'devops', 'fullstack', 'serverless'] },
+		{ Component: Svelte, Category: ['webdev', 'fullstack', 'serverless'] },
+		{ Component: Tailwind, Category: ['webdev'] },
+		{ Component: Terraform, Category: ['devops', 'fullstack', 'cloud'] },
+		{ Component: Typescript, Category: ['webdev'] },
+		{ Component: Wordpress, Category: ['webdev'] },
+		{ Component: Zuplo, Category: ['api'] }
 	];
-	const logos: any[] = [];
 
-	for (let i = 0; i < 20; i++) {
-		logoList.map((logo) => logos.push(logo));
+	const logos: Logo[] = [];
+
+	for (let i = 0; i < 10; i++) {
+		logoList.map((logo: Logo) => logos.push(logo));
 	}
+
+	const isSelected = false;
 </script>
 
 <div class="logo-container">
-	{#each logos as Logo}
+	{#each logos as { Component, Category }}
 		<div>
-			<Logo isSelected={true} />
+			<Component
+				className={Category.includes(currentCategory)
+					? 'fill-tertiary-500 stroke-tertiary-800 w-14 md:w-12 sm:w-10 h-14 md:h-12 sm:h-10'
+					: 'fill-surface-400/50 stroke-surface-800/50 w-14 md:w-12 sm:w-10 h-14 md:h-12 sm:h-10'}
+			/>
 		</div>
 	{/each}
 </div>

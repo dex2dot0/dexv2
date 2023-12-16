@@ -1,13 +1,9 @@
 <script lang="ts">
-	export let isSelected: boolean = false;
+	export let className: string = '';
 </script>
 
 <svg
-	class={isSelected
-		? 'fill-tertiary-500 stroke-tertiary-800 w-12 h-12'
-		: 'fill-surface-200/30 stroke-surface-500/30 w-8 h-8'}
-	height="2359"
-	width="2500"
+	class={className}
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="-0.4500000000000005 0.38 800.8891043012813 754.2299999999999"
 	><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="353.1" x2="107.1" y1="56.3" y2="783"

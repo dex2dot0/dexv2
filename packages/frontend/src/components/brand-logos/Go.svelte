@@ -1,15 +1,8 @@
 <script lang="ts">
-	export let isSelected: boolean = false;
+	export let className: string = '';
 </script>
 
-<svg
-	class={isSelected
-		? 'fill-tertiary-500 stroke-tertiary-800 w-12 h-12'
-		: 'fill-surface-200/30 stroke-surface-500/30 w-8 h-8'}
-	height="1250"
-	viewBox="16.8 16.1 72.9 27.6"
-	width="2500"
-	xmlns="http://www.w3.org/2000/svg"
+<svg class={className} viewBox="16.8 16.1 72.9 27.6" xmlns="http://www.w3.org/2000/svg"
 	><switch
 		><g
 			><path
