@@ -96,9 +96,9 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 105vw;
 		height: 105vh;
 		margin-left: -2rem;
+		margin-right: -3rem;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-start;
