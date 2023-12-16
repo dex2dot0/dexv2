@@ -25,7 +25,7 @@
 <svelte:head
 	>{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}</svelte:head
 >
-<div class="min-h-screen min-w-max h-screen grid grid-rows-[auto,1fr]">
+<div class="min-h-screen min-w-max h-screen w-screen grid grid-rows-[auto,1fr]">
 	<div>
 		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
 			<svelte:fragment slot="lead"><LightSwitch /></svelte:fragment>
