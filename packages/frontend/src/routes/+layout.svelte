@@ -27,7 +27,12 @@
 >
 <div class="min-h-screen min-w-max h-screen w-screen grid grid-rows-[auto,1fr]">
 	<div>
-		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
+		<AppBar
+			background="bg-tertiary-700 dark:bg-surface-800"
+			gridColumns="grid-cols-3"
+			slotDefault="place-self-center"
+			slotTrail="place-content-end"
+		>
 			<svelte:fragment slot="lead"><LightSwitch /></svelte:fragment>
 			<span class="h2 gradient-heading"
 				><img height="60" width="60" alt="dexv2 logo" src="/logos/Dexv2_logo.png" /></span
