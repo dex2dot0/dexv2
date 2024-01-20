@@ -1,9 +1,11 @@
 <script lang="ts">
 	export let className: string = '';
+	export let style: string = '';
 </script>
 
 <svg
 	class={className}
+	{style}
 	viewBox="0 0 256 191"
 	version="1.1"
 	xmlns="http://www.w3.org/2000/svg"
