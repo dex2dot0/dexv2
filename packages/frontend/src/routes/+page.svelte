@@ -185,7 +185,7 @@
 		@apply text-primary-600;
 		@apply bg-surface-200/90 dark:bg-surface-800/80;
 		@apply shadow-inner;
-		@apply shadow-primary-600/80;
+		@apply shadow-secondary-600/80;
 		text-decoration: underline;
 		text-decoration-thickness: 2px;
 		font-size: x-large;
@@ -197,7 +197,7 @@
 		@apply text-secondary-400;
 		@apply bg-surface-200/90 dark:bg-surface-800/80;
 		@apply shadow-2xl;
-		@apply shadow-primary-600/60;
+		@apply shadow-secondary-600/60;
 		font-size: x-large;
 		padding: 2rem;
 		border-radius: 0.5em;
