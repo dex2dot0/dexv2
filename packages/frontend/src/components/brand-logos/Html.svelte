@@ -1,8 +1,9 @@
 <script lang="ts">
 	export let className: string = '';
+	export let style: string = '';
 </script>
 
-<svg class={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+<svg {style} class={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
 	><path d="M4.46 28.802L1.892.001h28.216l-2.57 28.797L15.982 32z" /><path
 		d="M25.337 26.964l2.197-24.608H16v27.197z"
 	/><path

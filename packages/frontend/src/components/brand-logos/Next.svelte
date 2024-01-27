@@ -1,8 +1,10 @@
 <script lang="ts">
 	export let className: string = '';
+	export let style: string = '';
 </script>
 
 <svg
+	{style}
 	class={className}
 	preserveAspectRatio="xMidYMid"
 	viewBox="0 0 512 308.883"

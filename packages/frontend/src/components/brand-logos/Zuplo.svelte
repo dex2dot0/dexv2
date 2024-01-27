@@ -1,8 +1,14 @@
 <script lang="ts">
 	export let className: string = '';
+	export let style: string = '';
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" class={className} aria-hidden="true" viewBox="0 0 45 33"
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	{style}
+	class={className}
+	aria-hidden="true"
+	viewBox="0 0 45 33"
 	><path
 		d="M27.142 19.978H16.62L27.83 8.746a.758.758 0 0 0-.534-1.293H9.488V0h19.534a7.573 7.573 0 0 1 4.065 1.125 7.591 7.591 0 0 1 2.836 3.126 7.402 7.402 0 0 1-1.461 8.398l-7.32 7.328z"
 	/><path
