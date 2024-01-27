@@ -1,4 +1,7 @@
 <script lang="ts">
+	export let mediaSize: string;
+	export let currentCategory: string = '';
+
 	import Amplify from './Amplify.svelte';
 	import AWS from './AWS.svelte';
 	import Azure from './Azure.svelte';
@@ -31,13 +34,15 @@
 	import Wordpress from './Wordpress.svelte';
 	import Zuplo from './Zuplo.svelte';
 
-	export let currentCategory: string = '';
-
 	type Logo = {
 		Component: any;
 		Category: string[];
+		DivStyle?: string;
+		ComponentStyle?: string;
 	};
 
+	let baseRadiusIncrement = 5;
+	let numLogos: number = 100;
 	const logoList: Logo[] = [
 		{ Component: Amplify, Category: ['cloud', 'fullstack', 'devops', 'webdev', 'serverless'] },
 		{ Component: AWS, Category: ['cloud', 'fullstack', 'devops', 'webdev', 'serverless'] },
@@ -72,40 +77,73 @@
 		{ Component: Zuplo, Category: ['api'] }
 	];
 
-	const logos: Logo[] = [];
+	let logos = Array.from({ length: numLogos }, (_, i) => logoList[i % logoList.length]);
 
-	for (let i = 0; i < 15; i++) {
-		logoList.map((logo: Logo) => logos.push(logo));
+	let angleIncrement = 16;
+	let initialRadiusPx: number;
+	let baseSizeRem: number;
+	let sizeIncrementPerLogo: number;
+
+	$: if (mediaSize) {
+		switch (mediaSize) {
+			case 'sm':
+				initialRadiusPx = 120;
+				baseSizeRem = 1.5;
+				sizeIncrementPerLogo = 0.15;
+				break;
+			case 'md':
+				initialRadiusPx = 160;
+				baseSizeRem = 2;
+				sizeIncrementPerLogo = 0.1375;
+				break;
+			case 'lg':
+				initialRadiusPx = 200;
+				baseSizeRem = 2.5;
+				sizeIncrementPerLogo = 0.125;
+				break;
+			case 'xl':
+				initialRadiusPx = 220;
+				baseSizeRem = 3;
+				sizeIncrementPerLogo = 0.1;
+				break;
+		}
 	}
+
+	// Calculate size of each logo
+	const getSize = (index: number): number => {
+		return baseSizeRem + sizeIncrementPerLogo * index;
+	};
+
+	// Calculate radius increment
+	function getRadiusIncrement(index: number) {
+		return baseRadiusIncrement + getSize(index) / 2;
+	}
+
+	// Calculate position for each logo in a spiral pattern
+	$: calculateSpiralPosition = (index: number) => {
+		let totalRadius = initialRadiusPx;
+		for (let i = 0; i <= index; i++) {
+			totalRadius += getRadiusIncrement(i);
+		}
+		const angle = angleIncrement * index;
+		const x = totalRadius * Math.cos((angle * Math.PI) / 180);
+		const y = totalRadius * Math.sin((angle * Math.PI) / 180);
+		return { x, y };
+	};
 </script>
 
-<div class="logo-container">
-	{#each logos as { Component, Category }}
-		<div>
-			<Component
-				className={Category.includes(currentCategory)
-					? 'fill-tertiary-500 stroke-tertiary-800 w-14 md:w-12 sm:w-10 h-14 md:h-12 sm:h-10'
-					: 'fill-surface-400/50 stroke-surface-800/50 w-14 md:w-12 sm:w-10 h-14 md:h-12 sm:h-10'}
-			/>
-		</div>
-	{/each}
-</div>
-
-<style>
-	.logo-container {
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: 105vh;
-		margin-left: -2rem;
-		margin-right: -3rem;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-		align-content: flex-start;
-	}
-
-	.logo-container > div {
-		margin: 1rem; /* Adjust the gap between logos */
-	}
-</style>
+{#each logos as { Component, Category }, index}
+	<div
+		class="absolute"
+		style={`left: 50%; top: 50%; transform: translate(${calculateSpiralPosition(index).x}px, ${
+			calculateSpiralPosition(index).y
+		}px)`}
+	>
+		<Component
+			style={`width: ${getSize(index)}rem; height: ${getSize(index)}rem;`}
+			className={Category.includes(currentCategory)
+				? 'fill-tertiary-500 stroke-tertiary-800'
+				: 'fill-surface-400/50 stroke-surface-800/50'}
+		/>
+	</div>
+{/each}

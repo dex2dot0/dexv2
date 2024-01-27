@@ -58,18 +58,16 @@
 	};
 </script>
 
-{#if mediaSize}
-	{#each logos as _, index}
-		<div
-			class="absolute"
-			style={`left: 50%; top: 50%; transform: translate(${calculateSpiralPosition(index).x}px, ${
-				calculateSpiralPosition(index).y
-			}px)`}
-		>
-			<Amplify
-				style={`width: ${getSize(index)}rem; height: ${getSize(index)}rem;`}
-				className={`fill-tertiary-500 stroke-tertiary-800`}
-			/>
-		</div>
-	{/each}
-{/if}
+{#each logos as _, index}
+	<div
+		class="absolute"
+		style={`left: 50%; top: 50%; transform: translate(${calculateSpiralPosition(index).x}px, ${
+			calculateSpiralPosition(index).y
+		}px)`}
+	>
+		<Amplify
+			style={`width: ${getSize(index)}rem; height: ${getSize(index)}rem;`}
+			className={`fill-tertiary-500 stroke-tertiary-800`}
+		/>
+	</div>
+{/each}

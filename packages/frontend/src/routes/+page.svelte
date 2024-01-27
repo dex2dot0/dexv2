@@ -6,6 +6,8 @@
 	let currentDivFocus: string = '0';
 	let imageSrc = '/images/holga_0.png';
 	let cycleImages: any;
+	let width: number;
+	let mediaSize: string;
 
 	onMount(() => {
 		// For mobile viewports will automatically cycle through the image sections
@@ -37,8 +39,8 @@
 	// set current category
 	getCategory();
 
-	function handleResize() {
-		const width = window.innerWidth;
+	const handleResize = () => {
+		width = window.innerWidth;
 
 		if (width < 700) {
 			if (cycleImages) {
@@ -51,7 +53,17 @@
 				clearInterval(cycleImages);
 			}
 		}
-	}
+
+		if (window.innerWidth < 600) {
+			mediaSize = 'sm';
+		} else if (window.innerWidth < 900) {
+			mediaSize = 'md';
+		} else if (window.innerWidth < 1280) {
+			mediaSize = 'lg';
+		} else {
+			mediaSize = 'xl';
+		}
+	};
 
 	const getDivIds = () => {
 		const divs = document.querySelectorAll('div');
@@ -82,8 +94,10 @@
 	};
 </script>
 
-<div class="absolute flex left-0 -z-10">
-	<BrandLogos {currentCategory} />
+<div class="absolute overflow-hidden -z-10" style="width: 100vw; height: 100vh;">
+	{#if mediaSize}
+		<BrandLogos {currentCategory} bind:mediaSize />
+	{/if}
 </div>
 <div class="h-full w-full flex items-center justify-center">
 	<div class="grid grid-cols-3 h-full w-full text-center align-middle">
