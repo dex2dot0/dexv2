@@ -92,111 +92,18 @@
 	<div class="absolute overflow-clip -z-10 h-full w-screen">
 		<BrandLogos {currentCategory} bind:mediaSize />
 	</div>
-	<div class="grid w-full h-full place-content-center grid-auto-rows gap-y-8 text-center">
+	<div class="grid w-screen h-full place-content-center grid-auto-rows gap-y-8 text-center">
 		<figure class="place-self-center">
 			<section class="img-bg" />
 			<img width="200" height="200" src={imageSrc} alt="headshot" />
 		</figure>
-		<div class="typing-container flex flex-row content-center place-self-center p-2">
+		<div class="typing-container flex flex-row content-center place-self-center overflow-hidden">
 			<span class="h1 gradient-heading uppercase" id="sentence">{sentence}</span>
 			<span
 				class="input-cursor bg-gradient-to-br from-primary-500 via-tertiary-500 to-secondary-300"
 			/>
 		</div>
 	</div>
-	<!-- <div class="h-full w-full flex items-center justify-center">
-		<div class="grid grid-cols-3 h-full w-full text-center align-middle">
-			<div>
-				<div
-					id="11"
-					on:mouseover={() => onActive(11)}
-					on:click={() => onActive(11)}
-					class="h-1/3 flex items-center justify-center"
-				>
-					<span class={currentDivFocus === '11' ? 'focus-heading' : 'non-focus-heading'}>Cloud</span
-					>
-				</div>
-				<div
-					id="9"
-					on:mouseover={() => onActive(9)}
-					on:click={() => onActive(9)}
-					class="h-1/3 flex items-center justify-center"
-				>
-					<span class={currentDivFocus === '9' ? 'focus-heading' : 'non-focus-heading'}>DevOps</span
-					>
-				</div>
-				<div
-					id="7"
-					on:mouseover={() => onActive(7)}
-					on:click={() => onActive(7)}
-					class="h-1/3 flex flex-col items-center justify-center"
-				>
-					<span class={currentDivFocus === '7' ? 'focus-heading' : 'non-focus-heading'}
-						>Serverless</span
-					>
-				</div>
-			</div>
-			<div>
-				<div
-					id="12"
-					on:mouseover={() => onActive(12)}
-					on:click={() => onActive(12)}
-					class="h-1/3 flex flex-col items-center justify-center"
-				>
-					<span class={currentDivFocus === '12' ? 'focus-heading' : 'non-focus-heading'}
-						>Full-Stack</span
-					>
-				</div>
-				<div
-					id="0"
-					on:mouseover={() => onActive(0)}
-					on:click={() => onActive(0)}
-					class="grid place-content-center w-full h-1/3"
-				>
-					<figure class="w-full h-full">
-						<section class="img-bg" />
-						<img width="200" height="200" src={imageSrc} alt="headshot" />
-					</figure>
-				</div>
-				<div
-					id="6"
-					on:mouseover={() => onActive(6)}
-					on:click={() => onActive(6)}
-					class="h-1/3 flex flex-col items-center justify-center"
-				>
-					<span class={currentDivFocus === '6' ? 'focus-heading' : 'non-focus-heading'}>Data</span>
-				</div>
-			</div>
-			<div>
-				<div
-					id="1"
-					on:mouseover={() => onActive(1)}
-					on:click={() => onActive(1)}
-					class="h-1/3 flex items-center justify-center"
-				>
-					<span class={currentDivFocus === '1' ? 'focus-heading' : 'non-focus-heading'}>APIs</span>
-				</div>
-				<div
-					id="3"
-					on:mouseover={() => onActive(3)}
-					on:click={() => onActive(3)}
-					class="h-1/3 flex flex-col items-center justify-center"
-				>
-					<span class={currentDivFocus === '3' ? 'focus-heading bg-tertiary' : 'non-focus-heading'}
-						>WebDev</span
-					>
-				</div>
-				<div
-					id="4"
-					on:mouseover={() => onActive(4)}
-					on:click={() => onActive(4)}
-					class="h-1/3 flex items-center justify-center"
-				>
-					<span class={currentDivFocus === '4' ? 'focus-heading' : 'non-focus-heading'}>Agile</span>
-				</div>
-			</div>
-		</div>
-	</div> -->
 {:else}
 	Loading...
 {/if}
@@ -230,7 +137,7 @@
 	}
 	@keyframes pulse {
 		70% {
-			transform: scale(2);
+			transform: scale(1);
 		}
 	}
 
@@ -239,7 +146,7 @@
 		width: 3px;
 		height: 50px;
 		background-color: bg-gradient-primary-secondary;
-		margin-left: 5px;
+		padding-left: 5px;
 		animation: blink 0.6s linear infinite alternate;
 	}
 
@@ -257,20 +164,4 @@
 			opacity: 0;
 		}
 	}
-
-	.focus-heading {
-		@apply text-primary-600;
-		font-size: x-large;
-		padding-top: 3rem;
-	}
-
-	/* .non-focus-heading {
-		@apply text-secondary-400;
-		@apply bg-surface-200/90 dark:bg-surface-800/80;
-		@apply shadow-2xl;
-		@apply shadow-secondary-600/60;
-		font-size: x-large;
-		padding: 2rem;
-		border-radius: 0.5em;
-	} */
 </style>

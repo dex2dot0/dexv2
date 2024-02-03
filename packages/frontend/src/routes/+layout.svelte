@@ -25,7 +25,7 @@
 <svelte:head
 	>{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}</svelte:head
 >
-<div class="min-h-screen h-screen min-w-max w-screen grid grid-rows-[auto,1fr]">
+<div class="min-h-screen h-screen min-w-max w-screen">
 	<div>
 		<AppBar
 			background="bg-tertiary-700 dark:bg-surface-800"
@@ -34,9 +34,7 @@
 			slotTrail="place-content-end"
 		>
 			<svelte:fragment slot="lead"><LightSwitch /></svelte:fragment>
-			<span class="h2 gradient-heading"
-				><img height="60" width="60" alt="dexv2 logo" src="/logos/Dexv2_logo.png" /></span
-			>
+			<img height="60" width="60" alt="dexv2 logo" src="/logos/Dexv2_logo.png" />
 			<svelte:fragment slot="trail">
 				<div class="relative inline-block">
 					<button
