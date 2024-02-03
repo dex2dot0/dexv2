@@ -25,7 +25,7 @@
 <svelte:head
 	>{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}</svelte:head
 >
-<div class="min-h-screen min-w-max h-screen w-screen grid grid-rows-[auto,1fr]">
+<div class="min-h-screen h-screen min-w-max w-screen grid grid-rows-[auto,1fr]">
 	<div>
 		<AppBar
 			background="bg-tertiary-700 dark:bg-surface-800"
@@ -72,7 +72,7 @@
 			</svelte:fragment>
 		</AppBar>
 	</div>
-	<div class="overflow-y-auto">
+	<div class="w-screen h-full">
 		<slot />
 	</div>
 </div>
