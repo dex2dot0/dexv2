@@ -17,6 +17,7 @@
 	import Html from './Html.svelte';
 	import Jira from './Jira.svelte';
 	import Lambda from './Lambda.svelte';
+	import Me0 from './Me0.svelte';
 	import Mongo from './Mongo.svelte';
 	import MySql from './MySql.svelte';
 	import Mui from './Mui.svelte';
@@ -44,36 +45,38 @@
 	let baseRadiusIncrement = 5;
 	let numLogos: number = 100;
 	const logoList: Logo[] = [
-		{ Component: Typescript, Category: ['webdev'] },
-		{ Component: Csharp, Category: ['api'] },
-		{ Component: Amplify, Category: ['cloud', 'fullstack', 'devops', 'webdev', 'serverless'] },
+		{ Component: Me0, Category: [] },
+		{ Component: Typescript, Category: ['web-dev'] },
+		{ Component: Csharp, Category: ['api-dev'] },
+		{ Component: Amplify, Category: ['cloud', 'full-stack', 'devops', 'web-dev', 'serverless'] },
 		{ Component: Mongo, Category: ['data'] },
-		{ Component: Svelte, Category: ['webdev', 'fullstack', 'serverless'] },
+		{ Component: Svelte, Category: ['web-dev', 'full-stack', 'serverless'] },
 		{ Component: Github, Category: ['agile'] },
-		{ Component: AWS, Category: ['cloud', 'fullstack', 'devops', 'webdev', 'serverless'] },
-		{ Component: Go, Category: ['api'] },
-		{ Component: SST, Category: ['cloud', 'devops', 'fullstack', 'serverless'] },
-		{ Component: React, Category: ['webdev'] },
+		{ Component: AWS, Category: ['cloud', 'full-stack', 'devops', 'web-dev', 'serverless'] },
+		{ Component: Go, Category: ['api-dev'] },
+		{ Component: SST, Category: ['cloud', 'devops', 'full-stack', 'serverless'] },
+		{ Component: React, Category: ['web-dev'] },
 		{ Component: PowerBI, Category: ['data'] },
-		{ Component: Netlify, Category: ['webdev', 'serverless'] },
-		{ Component: Terraform, Category: ['devops', 'fullstack', 'cloud'] },
-		{ Component: Tailwind, Category: ['webdev'] },
-		{ Component: Postman, Category: ['api'] },
-		{ Component: Azure, Category: ['cloud', 'fullstack', 'devops', 'webdev', 'serverless'] },
-		{ Component: Fastify, Category: ['api'] },
-		{ Component: Next, Category: ['webdev', 'fullstack'] },
+		{ Component: Netlify, Category: ['web-dev', 'serverless'] },
+		{ Component: Terraform, Category: ['devops', 'full-stack', 'cloud'] },
+		{ Component: Tailwind, Category: ['web-dev'] },
+		{ Component: Postman, Category: ['api-dev'] },
+		{ Component: Azure, Category: ['cloud', 'full-stack', 'devops', 'web-dev', 'serverless'] },
+		{ Component: Fastify, Category: ['api-dev'] },
+		{ Component: Next, Category: ['web-dev', 'full-stack'] },
 		{ Component: Lambda, Category: ['cloud', 'serverless'] },
-		{ Component: Wordpress, Category: ['webdev'] },
+		{ Component: Wordpress, Category: ['web-dev'] },
 		{ Component: Jira, Category: ['agile'] },
-		{ Component: Cloudflare, Category: ['cloud', 'fullstack', 'webdev', 'serverless'] },
+		{ Component: Cloudflare, Category: ['cloud', 'full-stack', 'web-dev', 'serverless'] },
 		{ Component: MySql, Category: ['data'] },
-		{ Component: CSS, Category: ['webdev'] },
-		{ Component: Docker, Category: ['fullstack', 'devops'] },
-		{ Component: Mui, Category: ['webdev'] },
-		{ Component: DotnetCore, Category: ['api'] },
-		{ Component: Remix, Category: ['webdev', 'fullstack'] },
+		{ Component: CSS, Category: ['web-dev'] },
+		{ Component: Docker, Category: ['full-stack', 'devops'] },
+		{ Component: Mui, Category: ['web-dev'] },
+		{ Component: DotnetCore, Category: ['api-dev'] },
+		{ Component: Remix, Category: ['web-dev', 'full-stack'] },
 		{ Component: Dynamo, Category: ['data', 'cloud', 'serverless'] },
-		{ Component: Html, Category: ['webdev'] }
+		{ Component: Html, Category: ['web-dev'] },
+		{ Component: Zuplo, Category: ['api-dev'] }
 	];
 
 	let logos = Array.from({ length: numLogos }, (_, i) => logoList[i % logoList.length]);
