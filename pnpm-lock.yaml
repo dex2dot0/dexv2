@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -72,8 +76,8 @@ importers:
         specifier: ^2.33.1
         version: 2.33.1(eslint@8.49.0)(svelte@3.59.2)
       highlight.js:
-        specifier: ^11.8.0
-        version: 11.8.0
+        specifier: ^11.9.0
+        version: 11.9.0
       postcss:
         specifier: ^8.4.29
         version: 8.4.29
@@ -88,7 +92,7 @@ importers:
         version: 3.59.2
       svelte-check:
         specifier: ^3.5.1
-        version: 3.5.1(postcss@8.4.29)(svelte@3.59.2)
+        version: 3.5.1(@babel/core@7.22.5)(postcss@8.4.29)(svelte@3.59.2)
       svelte-kit-sst:
         specifier: 2.24.22
         version: 2.24.22
@@ -5761,8 +5765,8 @@ packages:
       readable-stream: 3.6.2
     dev: true
 
-  /highlight.js@11.8.0:
-    resolution: {integrity: sha512-MedQhoqVdr0U6SSnWPzfiadUcDHfN/Wzq25AkXiQv9oiOO/sG0S7XkvpFIqWBl9Yq1UYyYOOVORs5UW2XlPyzg==}
+  /highlight.js@11.9.0:
+    resolution: {integrity: sha512-fJ7cW7fQGCYAkgv4CPfwFHrfd/cLS4Hau96JuJ+ZTOWhjnhoeN1ub1tFmALm/+lW5z4WCAuAV9bm05AP0mS6Gw==}
     engines: {node: '>=12.0.0'}
     dev: true
 
@@ -7819,7 +7823,7 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check@3.5.1(postcss@8.4.29)(svelte@3.59.2):
+  /svelte-check@3.5.1(@babel/core@7.22.5)(postcss@8.4.29)(svelte@3.59.2):
     resolution: {integrity: sha512-+Zb4iHxAhdUtcUg/WJPRjlS1RJalIsWAe9Mz6G1zyznSs7dDkT7VUBdXc3q7Iwg49O/VrZgyJRvOJkjuBfKjFA==}
     hasBin: true
     peerDependencies:
@@ -7832,7 +7836,7 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.59.2
-      svelte-preprocess: 5.0.4(postcss@8.4.29)(svelte@3.59.2)(typescript@5.2.2)
+      svelte-preprocess: 5.0.4(@babel/core@7.22.5)(postcss@8.4.29)(svelte@3.59.2)(typescript@5.2.2)
       typescript: 5.2.2
     transitivePeerDependencies:
       - '@babel/core'
@@ -7884,7 +7888,7 @@ packages:
     resolution: {integrity: sha512-egI/gbpvXcDpUkXfwYKnUVrW87ZWk9mQH1QH6xgUmzqHAuvRJCdEfuLi+hTw9D+ag0mavkV7Mf3TLPPrAiO3sw==}
     dev: true
 
-  /svelte-preprocess@5.0.4(postcss@8.4.29)(svelte@3.59.2)(typescript@5.2.2):
+  /svelte-preprocess@5.0.4(@babel/core@7.22.5)(postcss@8.4.29)(svelte@3.59.2)(typescript@5.2.2):
     resolution: {integrity: sha512-ABia2QegosxOGsVlsSBJvoWeXy1wUKSfF7SWJdTjLAbx/Y3SrVevvvbFNQqrSJw89+lNSsM58SipmZJ5SRi5iw==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -7922,6 +7926,7 @@ packages:
       typescript:
         optional: true
     dependencies:
+      '@babel/core': 7.22.5
       '@types/pug': 2.0.6
       detect-indent: 6.1.0
       magic-string: 0.27.0
