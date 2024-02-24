@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import LoadingSpinner from '../components/LoadingSpinner.svelte';
 	import BrandLogos from '../components/brand-logos/BrandLogos.svelte';
 	import WavingHandIcon from '../components/icons/WavingHand.svelte';
 
@@ -62,6 +63,7 @@
 		}
 	}
 
+	// Credit for typing effect basis https://medium.com/front-end-weekly/how-to-create-typing-effect-in-css-and-js-3252dd807f0a
 	async function typeSentence(delay = 200, addedTime: number = 0) {
 		const letters = currentCategory.split('');
 		for (let i = 0; i < letters.length; i++) {
@@ -75,7 +77,7 @@
 
 		// Calculate wait time before deletion starts
 		const deletionTime = sentence.length * 100; // time to delete the sentence
-		const waitTime = remainingInterval - deletionTime - 100 - addedTime; // buffer of 100 ms
+		const waitTime = remainingInterval - deletionTime - addedTime - 100; // buffer of 100 ms, addedTime is for the initial delay
 
 		await waitForMs(waitTime > 0 ? waitTime : 0);
 		deleteSentence();
@@ -178,7 +180,9 @@
 		</div>
 	</div>
 {:else}
-	Loading...
+	<div class="grid place-content-center w-screen h-screen">
+		<LoadingSpinner className="text-primary-500 text-5xl" />
+	</div>
 {/if}
 
 <style lang="postcss">

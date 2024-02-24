@@ -34,7 +34,7 @@
 			slotTrail="place-content-end"
 		>
 			<svelte:fragment slot="lead"><LightSwitch /></svelte:fragment>
-			<img height="60" width="60" alt="dexv2 logo" src="/logos/Dexv2_logo.png" />
+			<img height="60" width="60" alt="dexv2 logo" src="/logos/Dex2 Logo.png" />
 			<svelte:fragment slot="trail">
 				<div class="relative inline-block">
 					<button

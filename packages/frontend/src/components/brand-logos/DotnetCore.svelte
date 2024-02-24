@@ -3,7 +3,7 @@
 	export let style: string = '';
 </script>
 
-<svg {style} class={className} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg {style} class={className} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 66">
 	<defs>
 		<style>
 			.cls-2 {

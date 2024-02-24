@@ -89,19 +89,19 @@
 	$: if (mediaSize) {
 		switch (mediaSize) {
 			case 'sm':
-				initialRadiusPx = 120;
-				baseSizeRem = 1.5;
-				sizeIncrementPerLogo = 0.15;
+				initialRadiusPx = 150;
+				baseSizeRem = 1.875;
+				sizeIncrementPerLogo = 0.0875;
 				break;
 			case 'md':
-				initialRadiusPx = 160;
-				baseSizeRem = 2;
-				sizeIncrementPerLogo = 0.1375;
+				initialRadiusPx = 180;
+				baseSizeRem = 2.125;
+				sizeIncrementPerLogo = 0.115;
 				break;
 			case 'lg':
 				initialRadiusPx = 200;
 				baseSizeRem = 2.5;
-				sizeIncrementPerLogo = 0.125;
+				sizeIncrementPerLogo = 0.105;
 				break;
 			case 'xl':
 				initialRadiusPx = 220;
