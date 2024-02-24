@@ -1,71 +1,276 @@
-<!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import LoadingSpinner from '../components/LoadingSpinner.svelte';
+	import BrandLogos from '../components/brand-logos/BrandLogos.svelte';
+	import WavingHandIcon from '../components/icons/WavingHand.svelte';
 
-<div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-10 text-center flex flex-col items-center">
-		<h2 class="h2">Welcome to Skeleton.</h2>
-		<!-- Animated Logo -->
-		<figure>
-			<section class="img-bg" />
-			<svg
-				class="fill-token -scale-x-[100%]"
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 200 200"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M98.77 50.95c25.1 0 46.54 8.7 61.86 23a41.34 41.34 0 0 0 5.19-1.93c4.35-2.02 10.06-6.17 17.13-12.43-1.15 10.91-2.38 18.93-3.7 24.04-.7 2.75-1.8 6.08-3.3 10a80.04 80.04 0 0 1 8.42 23.33c6.04 30.3-4.3 43.7-28.33 51.18.18.9.32 1.87.42 2.9.86 8.87-3.62 23.19-9 23.19-3.54 0-5.84-4.93-8.3-12.13-.78 8.34-4.58 17.9-8.98 17.9-4.73 0-7.25-8.84-10.93-20.13a214 214 0 0 1-.64 2.93l-.16.71-.16.71-.17.71c-1.84 7.58-4.46 15.07-8.5 15.07-5.06 0-2.29-15.9-10.8-22.63-43.14 2.36-79.43-13.6-79.43-59.62 0-8.48 2-16.76 5.69-24.45a93.72 93.72 0 0 1-1.77-3.68c-2.87-6.32-6.3-15.88-10.31-28.7 10.26 7.66 18.12 12.22 23.6 13.68.5.14 1.02.26 1.57.36 14.36-14.44 35.88-24.01 60.6-24.01Zm-9.99 62.3c-14.57 0-26.39 11.45-26.39 25.58 0 14.14 11.82 25.6 26.39 25.6s26.39-11.46 26.39-25.6c0-13.99-11.58-25.35-25.95-25.58Zm37.45 31.95c-4.4 0-6.73 9.4-6.73 13.62 0 3.3 1.1 5.12 2.9 5.45 4.39.4 3.05-5.97 5.23-5.97 1.06 0 2.2 1.35 3.34 2.73l.34.42c1.25 1.52 2.5 2.93 3.64 2.49 2.7-1.61 1.67-5.12.74-7.88-3.3-6.96-5.05-10.86-9.46-10.86Zm-36.85-28.45c12.57 0 22.76 9.78 22.76 21.85 0 12.07-10.2 21.85-22.76 21.85-.77 0-1.53-.04-2.29-.11 11.5-1.1 20.46-10.42 20.46-21.74 0-11.32-8.97-20.63-20.46-21.74.76-.07 1.52-.1 2.3-.1Zm65.54-5c-10.04 0-18.18 10.06-18.18 22.47 0 12.4 8.14 22.47 18.18 22.47s18.18-10.06 18.18-22.47c0-12.41-8.14-22.48-18.18-22.48Zm.6 3.62c8.38 0 15.16 8.4 15.16 18.74 0 10.35-6.78 18.74-15.16 18.74-.77 0-1.54-.07-2.28-.21 7.3-1.36 12.89-9.14 12.89-18.53 0-9.4-5.6-17.17-12.89-18.53.74-.14 1.5-.2 2.28-.2Zm3.34-72.27.12.07c.58.38.75 1.16.37 1.74l-2.99 4.6c-.35.55-1.05.73-1.61.44l-.12-.07a1.26 1.26 0 0 1-.37-1.74l2.98-4.6a1.26 1.26 0 0 1 1.62-.44ZM39.66 42l.08.1 2.76 3.93a1.26 1.26 0 0 1-2.06 1.45l-2.76-3.94A1.26 1.26 0 0 1 39.66 42Zm63.28-42 2.85 24.13 10.62-11.94.28 29.72-2.1-.47a77.8 77.8 0 0 0-16.72-2.04c-4.96 0-9.61.67-13.96 2l-2.34.73L83.5 4.96l9.72 18.37L102.94 0Zm-1.87 13.39-7.5 17.96-7.3-13.8-1.03 19.93.22-.06a51.56 51.56 0 0 1 12.1-1.45h.31c4.58 0 9.58.54 15 1.61l.35.07-.15-16.54-9.79 11-2.21-18.72Zm38.86 19.23c.67.2 1.05.89.86 1.56l-.38 1.32c-.17.62-.8 1-1.42.89l-.13-.03a1.26 1.26 0 0 1-.86-1.56l.38-1.32c.19-.66.88-1.05 1.55-.86ZM63.95 31.1l.05.12.7 2.17a1.26 1.26 0 0 1-2.34.9l-.04-.12-.71-2.17a1.26 1.26 0 0 1 2.34-.9Z"
-				/>
-			</svg>
-		</figure>
-		<!-- / -->
-		<div class="flex justify-center space-x-2">
-			<a
-				class="btn variant-filled"
-				href="https://skeleton.dev/"
-				target="_blank"
-				rel="noreferrer"
-			>
-				Launch Documentation
-			</a>
+	// create a map of image indexes to categories
+	const categoryMap: { [key: string]: string } = {
+		'0': 'api-dev',
+		'1': 'cloud',
+		'2': 'serverless',
+		'3': 'full-stack',
+		'4': 'web-dev',
+		'5': 'devops',
+		'6': 'data',
+		'7': 'agile'
+	};
+
+	$: currentDivFocus = '0';
+	$: currentCategory = '';
+	$: sentence = '';
+
+	let names: string[] = ['Dexter', 'Cliff', 'Dex2.0'];
+	$: name = 'Dexter';
+	$: nameClass = 'h2 bg-primary-500 gradient-heading-secondary uppercase';
+	$: stopBlink = false;
+
+	let width: number;
+	let mediaSize: string;
+
+	function waitForMs(ms: number) {
+		return new Promise((resolve) => setTimeout(resolve, ms));
+	}
+
+	async function animateName() {
+		let selectedName;
+
+		for (let i = 1; i < 3; i++) {
+			selectedName = names[i];
+			await waitForMs(1500);
+
+			nameClass = 'h2 gradient-heading-secondary-line-through uppercase';
+			await waitForMs(2000);
+
+			nameClass = 'h2 gradient-heading-secondary-with-bg uppercase';
+			stopBlink = true;
+			await waitForMs(2000);
+			name = '';
+			stopBlink = false;
+
+			await waitForMs(700);
+			nameClass = 'h2 bg-primary-500 gradient-heading-secondary uppercase';
+			typeName(100, selectedName);
+		}
+		stopBlink = true;
+	}
+
+	async function typeName(delay = 200, newName: string) {
+		const letters = newName.split('');
+		for (let i = 0; i < letters.length; i++) {
+			await waitForMs(delay);
+			name += letters[i];
+		}
+	}
+
+	// Credit for typing effect basis https://medium.com/front-end-weekly/how-to-create-typing-effect-in-css-and-js-3252dd807f0a
+	async function typeSentence(delay = 200, addedTime: number = 0) {
+		const letters = currentCategory.split('');
+		for (let i = 0; i < letters.length; i++) {
+			await waitForMs(delay);
+			sentence += letters[i];
+		}
+
+		// Calculate remaining time in the interval
+		const timeTyped = letters.length * delay;
+		const remainingInterval = 5000 - timeTyped;
+
+		// Calculate wait time before deletion starts
+		const deletionTime = sentence.length * 100; // time to delete the sentence
+		const waitTime = remainingInterval - deletionTime - addedTime - 100; // buffer of 100 ms, addedTime is for the initial delay
+
+		await waitForMs(waitTime > 0 ? waitTime : 0);
+		deleteSentence();
+	}
+
+	async function deleteSentence() {
+		for (let i = sentence.length; i > 0; i--) {
+			await waitForMs(100);
+			sentence = sentence.slice(0, -1);
+		}
+		sentence = '';
+	}
+
+	onMount(() => {
+		setTimeout(() => {
+			currentCategory = 'api-dev';
+			typeSentence(200, 1000);
+			animateName();
+		}, 1000);
+
+		window.addEventListener('resize', handleResize);
+		handleResize();
+
+		const interval = setInterval(() => {
+			// change image on timer
+			currentDivFocus = String((Number(currentDivFocus) + 1) % 8);
+
+			// change category on timer
+			currentCategory = categoryMap[currentDivFocus];
+			typeSentence();
+		}, 5000);
+
+		return () => {
+			clearInterval(interval);
+		};
+	});
+
+	const handleResize = () => {
+		width = window.innerWidth;
+
+		if (window.innerWidth < 600) {
+			mediaSize = 'sm';
+		} else if (window.innerWidth < 900) {
+			mediaSize = 'md';
+		} else if (window.innerWidth < 1280) {
+			mediaSize = 'lg';
+		} else {
+			mediaSize = 'xl';
+		}
+	};
+</script>
+
+{#if mediaSize}
+	<div class="absolute overflow-clip -z-10 h-full w-screen">
+		<BrandLogos {currentCategory} bind:mediaSize />
+	</div>
+	<div
+		class="grid w-screen h-full place-content-center items-center grid-auto-rows gap-y-2 text-center"
+	>
+		<div class="typing-container flex flex-row content-center place-self-center overflow-hidden">
+			<span class="h2 uppercase pr-2" id="sentence">Hey</span>
+			<WavingHandIcon className="w-8 h-8 inline-block stroke-primary-400 fill-secondary-500/50" />
 		</div>
-		<div class="space-y-2">
-			<p>Try editing the following:</p>
-			<p><code class="code">/src/routes/+layout.svelte</code></p>
-			<p><code class="code">/src/routes/+page.svelte</code></p>
+		<div
+			class="typing-container flex flex-row content-center place-self-center place-content-center overflow-hidden"
+		>
+			<span class="h2 uppercase pr-2" id="sentence">I'm</span>
+			<span class={nameClass} id="sentence">{name}</span>
+			<span
+				class={stopBlink
+					? ''
+					: 'input-cursor bg-gradient-to-br from-primary-500 via-tertiary-500 to-secondary-300'}
+			/>
+		</div>
+		<div
+			class="typing-container flex flex-row items-center content-center place-content-center overflow-hidden"
+		>
+			<span class="h2 uppercase" id="sentence"
+				>And I
+				<svg
+					class="feather feather-heart w-8 h-8 inline-block fill-primary-400 stroke-secondary-300"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					><path
+						d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+					/></svg
+				>
+			</span>
+		</div>
+		<div class="typing-container flex flex-row content-center place-self-center">
+			<span class="h1 gradient-heading uppercase h-max" id="sentence">{sentence}</span>
+			<span
+				class="input-cursor bg-gradient-to-br from-primary-500 via-tertiary-500 to-secondary-300"
+			/>
+			<!-- to prevent the height from collapsing and layout shift occurring-->
+			<span class="h1">&nbsp;</span>
 		</div>
 	</div>
-</div>
+{:else}
+	<div class="grid place-content-center w-screen h-screen">
+		<LoadingSpinner className="text-primary-500 text-5xl" />
+	</div>
+{/if}
 
 <style lang="postcss">
-	figure {
-		@apply flex relative flex-col;
+	.gradient-heading-secondary-line-through {
+		@apply bg-clip-text text-transparent box-decoration-clone;
+		/* Direction */
+		@apply bg-gradient-to-b;
+		/* Color Stops */
+		@apply from-secondary-600 via-tertiary-400 to-primary-500;
+		position: relative; /* Ensure the container is positioned for pseudo-elements */
 	}
-	figure svg,
-	.img-bg {
-		@apply w-64 h-64 md:w-80 md:h-80;
+
+	.gradient-heading-secondary-line-through::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%; /* Center the line vertically */
+		height: 3px; /* Thickness of the line */
+		background: linear-gradient(to right, var(--tw-gradient-stops)); /* Use the gradient */
+		/* Adjust 'var(--tw-gradient-stops)' as needed if using custom properties or specify the gradient explicitly */
 	}
-	.img-bg {
-		@apply absolute z-[-1] rounded-full blur-[50px] transition-all;
-		animation: pulse 5s cubic-bezier(0, 0, 0, 0.5) infinite,
-			glow 5s linear infinite;
+
+	.gradient-heading-secondary-with-bg {
+		@apply bg-clip-text text-transparent box-decoration-clone;
+		/* Direction */
+		@apply bg-gradient-to-b;
+		/* Color Stops for Text */
+		@apply from-secondary-600 via-tertiary-400 to-primary-500;
+
+		/* Background Layer */
+		position: relative;
+		z-index: 0;
 	}
-	@keyframes glow {
+
+	.gradient-heading-secondary-with-bg::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+
+		/* Adjust the background gradient as needed for visibility and design preference */
+		background: linear-gradient(
+			to bottom,
+			rgba(255, 255, 255, 0.3),
+			rgba(250, 250, 250, 0.4)
+		); /* Light and more opaque background */
+	}
+
+	.gradient-heading-secondary-with-bg::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%; /* Adjust as necessary to center the line */
+		height: 3px; /* Adjust the thickness of the line as needed */
+		background: linear-gradient(
+			to right,
+			#4c669f,
+			#3b5998,
+			#192f6a
+		); /* Example gradient - match to your text gradient */
+		z-index: 1; /* Ensure it's above the background but below the text */
+	}
+
+	.input-cursor {
+		display: inline-block;
+		width: 3px;
+		background-color: bg-gradient-primary-secondary;
+		padding-left: 5px;
+		animation: blink 0.6s linear infinite alternate;
+	}
+
+	@keyframes blink {
 		0% {
-			@apply bg-primary-400/50;
+			opacity: 1;
 		}
-		33% {
-			@apply bg-secondary-400/50;
+		40% {
+			opacity: 1;
 		}
-		66% {
-			@apply bg-tertiary-400/50;
+		60% {
+			opacity: 0;
 		}
 		100% {
-			@apply bg-primary-400/50;
-		}
-	}
-	@keyframes pulse {
-		50% {
-			transform: scale(1.5);
+			opacity: 0;
 		}
 	}
 </style>
