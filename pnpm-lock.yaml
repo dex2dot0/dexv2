@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -93,8 +97,8 @@ importers:
         specifier: ^3.6.6
         version: 3.6.6(@babel/core@7.22.5)(postcss@8.4.35)(svelte@4.2.12)
       svelte-kit-sst:
-        specifier: 2.40.3
-        version: 2.40.3
+        specifier: 2.40.4
+        version: 2.40.4
       tailwindcss:
         specifier: ^3.4.1
         version: 3.4.1
@@ -8418,8 +8422,8 @@ packages:
       svelte: 4.2.12
     dev: true
 
-  /svelte-kit-sst@2.40.3:
-    resolution: {integrity: sha512-qy74tQbuczc9ahDnoHFTuZ6TNjO527j8ol5zK1FGskfDINyc460IJ/rKZxFuBh5bTnvYGX/3yaHcH12f2m4oIQ==}
+  /svelte-kit-sst@2.40.4:
+    resolution: {integrity: sha512-RC5BLV0Z1Rp1yXFo3Dr8wJ93c/acfO+V0dSi0m5Xuky4D6z/QjesCsBfH/TgvAN590d5OcSL5UhnP6DXJN+Pfw==}
     dev: true
 
   /svelte-preprocess@5.1.3(@babel/core@7.22.5)(postcss@8.4.35)(svelte@4.2.12)(typescript@5.3.3):
