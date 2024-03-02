@@ -14,3 +14,8 @@ updates:
       - 'dex2dot0'
     labels:
       - 'dependencies'
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      # Check for updates to GitHub Actions every week
+      interval: 'weekly'
