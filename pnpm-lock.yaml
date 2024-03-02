@@ -97,8 +97,8 @@ importers:
         specifier: ^3.6.6
         version: 3.6.6(@babel/core@7.24.0)(postcss@8.4.35)(svelte@4.2.12)
       svelte-kit-sst:
-        specifier: 2.40.4
-        version: 2.40.4
+        specifier: 2.40.6
+        version: 2.40.6
       tailwindcss:
         specifier: ^3.4.1
         version: 3.4.1
@@ -7192,8 +7192,8 @@ packages:
       svelte: 4.2.12
     dev: true
 
-  /svelte-kit-sst@2.40.4:
-    resolution: {integrity: sha512-RC5BLV0Z1Rp1yXFo3Dr8wJ93c/acfO+V0dSi0m5Xuky4D6z/QjesCsBfH/TgvAN590d5OcSL5UhnP6DXJN+Pfw==}
+  /svelte-kit-sst@2.40.6:
+    resolution: {integrity: sha512-ffUZ5TUxaQU8ZpP+MULOuJ/20TF3AX01YcmW+VSzsLYh5TMTOYS/XaZbjO+4IOmvmB3g/2Eea707D/LLnwV0qA==}
     dev: true
 
   /svelte-preprocess@5.1.3(@babel/core@7.24.0)(postcss@8.4.35)(svelte@4.2.12)(typescript@5.3.3):
