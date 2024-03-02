@@ -118,8 +118,8 @@ importers:
   packages/functions:
     devDependencies:
       '@types/aws-lambda':
-        specifier: ^8.10.119
-        version: 8.10.119
+        specifier: ^8.10.134
+        version: 8.10.134
       '@types/node':
         specifier: ^20.3.2
         version: 20.3.2
@@ -3309,8 +3309,8 @@ packages:
     resolution: {integrity: sha512-+pio93ejHN4nINX4pXqfnR/fPLRtJBaT4ORaa5RH0Oc1zoYmo2B2koG+M328CQhHKn1Wj6FcOxCDFXAot9NhvA==}
     dev: true
 
-  /@types/aws-lambda@8.10.119:
-    resolution: {integrity: sha512-Vqm22aZrCvCd6I5g1SvpW151jfqwTzEZ7XJ3yZ6xaZG31nUEOEyzzVImjRcsN8Wi/QyPxId/x8GTtgIbsy8kEw==}
+  /@types/aws-lambda@8.10.134:
+    resolution: {integrity: sha512-cfv422ivDMO+EeA3N4YcshbTHBL+5lLXe+Uz+4HXvIcsCuWvqNFpOs28ZprL8NA3qRCzt95ETiNAJDn4IcC/PA==}
     dev: true
 
   /@types/cookie@0.6.0:
