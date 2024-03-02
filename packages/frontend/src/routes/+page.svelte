@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	import LoadingSpinner from '../components/LoadingSpinner.svelte';
 	import BrandLogos from '../components/brand-logos/BrandLogos.svelte';
 	import WavingHandIcon from '../components/icons/WavingHand.svelte';
@@ -16,6 +17,7 @@
 		'7': 'agile'
 	};
 
+	$: prefersReducedMotion = false;
 	$: currentDivFocus = '0';
 	$: currentCategory = '';
 	$: sentence = '';
@@ -92,6 +94,17 @@
 	}
 
 	onMount(() => {
+		// set prefersReducedMotion
+		const mediaQueryReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+		prefersReducedMotion = mediaQueryReduceMotion.matches;
+
+		if (prefersReducedMotion) {
+			handleResize();
+			stopBlink = true;
+			currentCategory = 'web-dev';
+			sentence = 'Programming';
+			return;
+		}
 		setTimeout(() => {
 			currentCategory = 'api-dev';
 			typeSentence(200, 1000);
@@ -173,7 +186,9 @@
 		<div class="typing-container flex flex-row content-center place-self-center">
 			<span class="h1 gradient-heading uppercase h-max" id="sentence">{sentence}</span>
 			<span
-				class="input-cursor bg-gradient-to-br from-primary-500 via-tertiary-500 to-secondary-300"
+				class={stopBlink
+					? ''
+					: 'input-cursor bg-gradient-to-br from-primary-500 via-tertiary-500 to-secondary-300'}
 			/>
 			<!-- to prevent the height from collapsing and layout shift occurring-->
 			<span class="h1">&nbsp;</span>
