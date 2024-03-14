@@ -18,8 +18,8 @@ importers:
         specifier: 10.3.0
         version: 10.3.0
       sst:
-        specifier: 2.40.6
-        version: 2.40.6(@aws-sdk/credential-provider-node@3.525.0)
+        specifier: 2.40.7
+        version: 2.40.7(@aws-sdk/credential-provider-node@3.525.0)
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -124,8 +124,8 @@ importers:
         specifier: ^20.11.24
         version: 20.11.24
       sst:
-        specifier: 2.40.6
-        version: 2.40.6(@aws-sdk/credential-provider-node@3.525.0)
+        specifier: 2.40.7
+        version: 2.40.7(@aws-sdk/credential-provider-node@3.525.0)
       vitest:
         specifier: ^1.3.1
         version: 1.3.1(@types/node@20.11.24)
@@ -6905,8 +6905,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /sst@2.40.6(@aws-sdk/credential-provider-node@3.525.0):
-    resolution: {integrity: sha512-cpwiOgzOx9cA00qDJ/FO3H9NrMZkK/6lFwERydSuvT3EuDgN9yZ68brCdllWv9gOsvya4JlWOhPQ5FpofrSdEA==}
+  /sst@2.40.7(@aws-sdk/credential-provider-node@3.525.0):
+    resolution: {integrity: sha512-eJ+HEkJblSF6CAbULGIsLwYbPS9xDyG4tCYoD9BE2Iqk7yceXDbqfgOL+zMlpw6LvRmBmL+RIGWzCVhHlGqUeg==}
     hasBin: true
     peerDependencies:
       '@sls-next/lambda-at-edge': ^3.7.0
