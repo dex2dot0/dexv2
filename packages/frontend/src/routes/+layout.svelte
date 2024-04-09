@@ -3,6 +3,7 @@
 	import { AppBar, LightSwitch, autoModeWatcher } from '@skeletonlabs/skeleton';
 	import { createMenu } from 'svelte-headlessui';
 	import Transition from 'svelte-transition';
+	import Footer from '../components/Footer.svelte';
 
 	const menu = createMenu({ label: 'Actions' });
 
@@ -72,5 +73,6 @@
 	</div>
 	<div class="w-screen h-full">
 		<slot />
+		<Footer />
 	</div>
 </div>
