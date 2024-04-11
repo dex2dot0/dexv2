@@ -34,7 +34,7 @@
 			slotDefault="place-self-center"
 			slotTrail="place-content-end"
 		>
-			<svelte:fragment slot="lead"><LightSwitch /></svelte:fragment>
+			<svelte:fragment slot="lead"><LightSwitch class="ml-6" /></svelte:fragment>
 			<img height="60" width="60" alt="dexv2 logo" src="/logos/dex2logo.webp" />
 			<svelte:fragment slot="trail">
 				<div class="relative inline-block">
