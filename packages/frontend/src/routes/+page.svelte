@@ -22,7 +22,7 @@
 	$: currentCategory = '';
 	$: sentence = '';
 
-	let names: string[] = ['Dexter', 'Cliff', 'Dex2.0'];
+	let names: string[] = ['Dexter', 'Cliff', 'Clifford', 'Cliffy', 'Dex2.0'];
 	$: name = 'Dexter';
 	$: nameClass = 'h2 bg-primary-500 gradient-heading-secondary uppercase';
 	$: stopBlink = false;
@@ -37,7 +37,7 @@
 	async function animateName() {
 		let selectedName;
 
-		for (let i = 1; i < 3; i++) {
+		for (let i = 1; i < names.length; i++) {
 			selectedName = names[i];
 			await waitForMs(1500);
 
