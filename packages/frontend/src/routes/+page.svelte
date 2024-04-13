@@ -105,7 +105,7 @@
 			sentence = 'Programming';
 			return;
 		}
-		setTimeout(() => {
+		let timeout = setTimeout(() => {
 			currentCategory = 'api-dev';
 			typeSentence(200, 1000);
 			animateName();
@@ -114,7 +114,7 @@
 		window.addEventListener('resize', handleResize);
 		handleResize();
 
-		const interval = setInterval(() => {
+		let interval = setInterval(() => {
 			// change image on timer
 			currentDivFocus = String((Number(currentDivFocus) + 1) % 8);
 
@@ -122,6 +122,25 @@
 			currentCategory = categoryMap[currentDivFocus];
 			typeSentence();
 		}, 5000);
+
+		document.addEventListener('visibilitychange', () => {
+			if (document.visibilityState === 'hidden') {
+				// clear typing animations
+				clearInterval(interval);
+				clearTimeout(timeout);
+			} else {
+				// reset typing animations
+				currentCategory = 'api-dev';
+				typeSentence(200, 1000);
+				animateName();
+
+				interval = setInterval(() => {
+					currentDivFocus = String((Number(currentDivFocus) + 1) % 8);
+					currentCategory = categoryMap[currentDivFocus];
+					typeSentence();
+				}, 5000);
+			}
+		});
 
 		return () => {
 			clearInterval(interval);
