@@ -22,7 +22,7 @@
 	$: currentCategory = '';
 	$: sentence = '';
 
-	let names: string[] = ['Dexter', 'Cliff', 'Dex2.0'];
+	let names: string[] = ['Dexter', 'Cliff', 'Clifford', 'Cliffy', 'Dex2.0'];
 	$: name = 'Dexter';
 	$: nameClass = 'h2 bg-primary-500 gradient-heading-secondary uppercase';
 	$: stopBlink = false;
@@ -37,7 +37,7 @@
 	async function animateName() {
 		let selectedName;
 
-		for (let i = 1; i < 3; i++) {
+		for (let i = 1; i < names.length; i++) {
 			selectedName = names[i];
 			await waitForMs(1500);
 
@@ -105,7 +105,7 @@
 			sentence = 'Programming';
 			return;
 		}
-		setTimeout(() => {
+		let timeout = setTimeout(() => {
 			currentCategory = 'api-dev';
 			typeSentence(200, 1000);
 			animateName();
@@ -114,7 +114,7 @@
 		window.addEventListener('resize', handleResize);
 		handleResize();
 
-		const interval = setInterval(() => {
+		let interval = setInterval(() => {
 			// change image on timer
 			currentDivFocus = String((Number(currentDivFocus) + 1) % 8);
 
@@ -122,6 +122,25 @@
 			currentCategory = categoryMap[currentDivFocus];
 			typeSentence();
 		}, 5000);
+
+		document.addEventListener('visibilitychange', () => {
+			if (document.visibilityState === 'hidden') {
+				// clear typing animations
+				clearInterval(interval);
+				clearTimeout(timeout);
+			} else {
+				// reset typing animations
+				currentCategory = 'api-dev';
+				typeSentence(200, 1000);
+				animateName();
+
+				interval = setInterval(() => {
+					currentDivFocus = String((Number(currentDivFocus) + 1) % 8);
+					currentCategory = categoryMap[currentDivFocus];
+					typeSentence();
+				}, 5000);
+			}
+		});
 
 		return () => {
 			clearInterval(interval);
