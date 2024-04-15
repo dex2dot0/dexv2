@@ -3,7 +3,13 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'daily'
+      interval: 'weekly'
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-minor']
+      # sst will be updated with SST CLI which also sets CDK version
+      - dependency-name: 'sst'
+      - dependency-name: 'aws-cdk-lib'
     open-pull-requests-limit: 10
     target-branch: 'dev'
     commit-message:
