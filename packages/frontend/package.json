@@ -32,7 +32,7 @@
     "highlight.js": "^11.9.0",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
-    "prettier-plugin-svelte": "^3.2.2",
+    "prettier-plugin-svelte": "^3.2.3",
     "svelte": "^4.2.14",
     "svelte-check": "^3.6.6",
     "svelte-kit-sst": "2.41.4",
