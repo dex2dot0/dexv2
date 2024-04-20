@@ -26,7 +26,7 @@
 <svelte:head
 	>{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}</svelte:head
 >
-<div class="min-h-screen h-screen min-w-max w-screen">
+<div class="h-lvh min-w-max w-screen overflow-y-visible">
 	<div>
 		<AppBar
 			background="bg-tertiary-700 dark:bg-surface-800"
