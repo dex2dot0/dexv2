@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { browser } from '$app/environment';
 	import LoadingSpinner from '../components/LoadingSpinner.svelte';
 	import BrandLogos from '../components/brand-logos/BrandLogos.svelte';
 	import WavingHandIcon from '../components/icons/WavingHand.svelte';
