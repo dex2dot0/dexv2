@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -23,8 +27,8 @@ importers:
   packages/frontend:
     dependencies:
       svelte-headlessui:
-        specifier: ^0.0.33
-        version: 0.0.33
+        specifier: ^0.0.34
+        version: 0.0.34(svelte@4.2.14)
       svelte-transition:
         specifier: ^0.0.10
         version: 0.0.10(svelte@4.2.14)
@@ -7258,8 +7262,12 @@ packages:
       svelte: 4.2.14
     dev: true
 
-  /svelte-headlessui@0.0.33:
-    resolution: {integrity: sha512-GYEkYtXLrF1Yqyea7K6U63HMhNtZG9YSFwhedlQ8DpYsHmHztwSTZaLlEJIoygeyIKCSDmgomSTai7t8fj2yIw==}
+  /svelte-headlessui@0.0.34(svelte@4.2.14):
+    resolution: {integrity: sha512-NMMfWZmlOBwjxGK4/CcYhXrvDHS8ztpvlITFMsmoiqPynpATik5VkDapo2i5nIZAQ2jYEgjO6t4xpFz9UQrukw==}
+    peerDependencies:
+      svelte: ^4.0.0 || ^5.0.0
+    dependencies:
+      svelte: 4.2.14
     dev: false
 
   /svelte-hmr@0.15.3(svelte@4.2.14):
@@ -8036,7 +8044,3 @@ packages:
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: true
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
