@@ -45,6 +45,6 @@
   "type": "module",
   "dependencies": {
     "svelte-headlessui": "^0.0.33",
-    "svelte-transition": "^0.0.10"
+    "svelte-transition": "^0.0.15"
   }
 }
