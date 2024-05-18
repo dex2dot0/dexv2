@@ -55,8 +55,8 @@
 		<h1 class="gradient-heading text-4xl md:text-5xl font-bold">About Me</h1>
 		<hr class="gradient-hr m-3" />
 	</div>
-	<div class="text-center pb-8">
-		<div class="py-2">
+	<div class="text-center pb-4">
+		<div class="px-4 xs:px-12 sm:px-6">
 			<h1 class="gradient-heading text-2xl md:text-3xl font-bold">Why Dex2.0?</h1>
 			<p class="text-balance md:text-lg text-gray-700 dark:text-gray-300 mt-4">
 				When I was born, on my birth certificate at least, my name was legally Dexter. There was
@@ -65,7 +65,9 @@
 				after I was born. Shortly thereafter, my folks got the birth certificate amended to my
 				current legal name, Cliff (no its not Clifford, I am not that cool). Dexter version 2,
 				dex2.0, dex2dot0, etc. plays on the history of my name, ergo Cliff is effectively the second
-				version of Dexter.
+				version of Dexter. Probably goes without saying but without Michael C. Hall, I don't know if
+				I'd be using the same moniker. Dexter's lab was pretty cool too but I am a big fan of
+				Dexter.
 			</p>
 		</div>
 	</div>
