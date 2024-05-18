@@ -73,6 +73,7 @@
 	<div class="container mx-auto px-4">
 		{#each cards as card, index}
 			<HexCard
+				{index}
 				iconHref={card.iconHref}
 				bgColor={card.bgColor}
 				header={card.header}
