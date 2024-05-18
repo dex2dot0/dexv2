@@ -29,7 +29,6 @@
 	{:else}
 		<div class="relative w-32 h-32 sm:w-64 sm:h-64 mr-4">
 			<HexFull fillColor={bgColor} iconUrl={iconHref} />
-			<img class="absolute inset-0 m-auto w-1/3 h-1/3 object-contain" src={iconHref} alt="Icon" />
 		</div>
 		<div class="text-center sm:text-left">
 			<h2 class="text-xl font-bold mb-2">{header}</h2>

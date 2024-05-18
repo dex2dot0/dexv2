@@ -23,6 +23,31 @@
 			mediaSize = 'xl';
 		}
 	};
+
+	let cards = [
+		{
+			iconHref: '/icons/feather/24/code.svg',
+			bgColor: 'fill-primary-500',
+			header: 'Header 1',
+			body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+			sliced: 'left'
+		},
+		{
+			iconHref: '/icons/feather/24/code.svg',
+			bgColor: 'fill-primary-500',
+			header: 'Header 2',
+			body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+			sliced: 'right'
+		},
+		{
+			iconHref: '/icons/feather/24/code.svg',
+			bgColor: 'fill-primary-500',
+			header: 'Header 3',
+			body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+			sliced: 'left'
+		}
+		// Add more cards as needed
+	];
 </script>
 
 <div class="main">
@@ -46,14 +71,20 @@
 	</div>
 
 	<div class="container mx-auto px-4">
-		<HexCard
-			bgColor="fill-primary-500"
-			iconHref="/icons/feather/24/code.svg"
-			sliced="right"
-			header="Hello"
-			body="hello world. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet."
-			{mediaSize}
-		/>
+		{#each cards as card, index}
+			<HexCard
+				iconHref={card.iconHref}
+				bgColor={card.bgColor}
+				header={card.header}
+				body={card.body}
+				sliced={mediaSize == 'lg' || mediaSize == 'xl'
+					? index % 2 === 0
+						? 'left'
+						: 'right'
+					: 'full'}
+				{mediaSize}
+			/>
+		{/each}
 	</div>
 
 	<!-- Professional Section -->
