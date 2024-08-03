@@ -60,6 +60,14 @@ body {
 	@apply from-secondary-600 via-tertiary-400 to-primary-500;
 }
 
+.gradient-heading-surface {
+	@apply bg-clip-text text-transparent box-decoration-clone;
+	/* Direction */
+	@apply bg-gradient-to-b;
+	/* Color Stops */
+	@apply from-surface-600 via-tertiary-400 to-secondary-500;
+}
+
 .gradient-hr {
 	height: 4px;
 	border: 1px;
