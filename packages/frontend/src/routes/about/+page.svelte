@@ -30,7 +30,7 @@
 			iconUrl: '/icons/feather/24/bar-chart.svg',
 			bgColor: 'fill-primary-500 bg-primary-500',
 			iconBgColor: 'bg-primary-400',
-			header: 'Discovering Passion',
+			header: 'Visual Basic is Kinda Cool!',
 			body: `I started my journey into development and programming by pushing the boundaries of Excel while working with mortgage data. As the data grew, I needed more automation and discovered VBA scripting. Despite its limitations, VBA opened my eyes to the power of programming, turning complex tasks into simple ones. This experience sparked a passion for programming for me and became the catalyst for pursuing a career in engineering.`
 		},
 		{
@@ -124,7 +124,7 @@
 		</div>
 	</div>
 
-	<div class="container mx-auto px-4 h-full">
+	<div class="container mx-auto h-full">
 		<div class="relative">
 			{#each cards as card, index}
 				<HexCard
@@ -147,7 +147,9 @@
 	</div>
 
 	<!-- Personal Section -->
-	<div class="flex flex-wrap justify-around items-start mt-8">
+	<!-- <div
+		class="flex flex-wrap justify-around items-start mt-8 bg-primary-200/50 dark:bg-secondary-800/30"
+	>
 		<div
 			class="card rounded-card bg-white dark:bg-gray-800 p-6 m-4 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
 		>
@@ -164,8 +166,15 @@
 				A melody for every mood, I find music to be a refuge and a source of inspiration.
 			</p>
 		</div>
-		<!-- Other personal cards similarly -->
-	</div>
+		<div
+			class="card rounded-card bg-white dark:bg-gray-800 p-6 m-4 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+		>
+			<h2 class="gradient-heading-secondary font-semibold">Music</h2>
+			<p class="text-card">
+				A melody for every mood, I find music to be a refuge and a source of inspiration.
+			</p>
+		</div>
+	</div> -->
 </div>
 
 <style lang="postcss">
