@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import BackGround from './BackGround.svelte';
+	import HexBackground from './HexBackground.svelte';
 	import HexCard from '../../components/HexCard/HexCard.svelte';
 
 	let width: number;
@@ -31,63 +31,61 @@
 			bgColor: 'fill-primary-500 bg-primary-500',
 			iconBgColor: 'bg-primary-400',
 			header: 'Discovering Passion',
-			body: `I started my journey into development and programming by pushing the boundaries of Excel while working with mortgage data. As the data grew, I needed more automation and discovered VBA scripting. Despite its limitations, VBA opened my eyes to the power of programming, turning complex tasks into simple ones. This experience sparked a passion for programming for me and became the catalyst for pursuing a career in engineering.`,
-			sliced: 'left'
+			body: `I started my journey into development and programming by pushing the boundaries of Excel while working with mortgage data. As the data grew, I needed more automation and discovered VBA scripting. Despite its limitations, VBA opened my eyes to the power of programming, turning complex tasks into simple ones. This experience sparked a passion for programming for me and became the catalyst for pursuing a career in engineering.`
 		},
 		{
 			iconUrl: '/icons/csharp.svg',
 			bgColor: 'fill-secondary-600 bg-secondary-600',
 			iconBgColor: 'bg-secondary-400/70',
 			header: 'Dotnet Land',
-			body: 'My initial foray beyond a simplified language like VBA was into the world of C# and VB.NET. I must admit, coming from VBA, VB.NET was much more attractive than C# at the time. As the years have passed however, I have seen the light, drank the Kool-Aid, and adamantly prefer C# on .NET projects unless required otherwise. I am presently looking forward to the day where .NET Framework is a thing of the past for me and I can live peacefully in .NET Core bliss!',
-			sliced: 'right'
+			body: 'My initial foray beyond a simplified language like VBA was into the world of C# and VB.NET. I must admit, coming from VBA, VB.NET was much more attractive than C# at the time. As the years have passed however, I have seen the light, drank the Kool-Aid, and adamantly prefer C# on .NET projects unless required otherwise. I am presently looking forward to the day where .NET Framework is a thing of the past for me and I can live peacefully in .NET Core bliss!'
 		},
 		{
 			iconUrl: '/icons/feather/24/database.svg',
 			bgColor: 'fill-tertiary-500 bg-tertiary-500',
 			iconBgColor: 'bg-tertiary-400',
 			header: 'Excelling Beyond Excel',
-			body: `As they say, business runs on Excel but not because it should, rather because it is easy and fast to get up and running as a "reporting solution". But as a reporting solution, it is just not very good and certainly not scalable. Within my career, this has led me to develop proficiencies all across the data spectrum including database administration, SQL, NoSQL, ETL, business analysis, data engineering, and more.`,
-			sliced: 'left'
+			body: `As they say, business runs on Excel but not because it should, rather because it is easy and fast to get up and running as a "reporting solution". But as a reporting solution, it is just not very good and certainly not scalable. Within my career, this has led me to develop proficiencies all across the data spectrum including database administration, SQL, NoSQL, ETL, business analysis, data engineering, and more.`
 		},
 		{
 			iconUrl: '/icons/feather/24/chrome.svg',
 			bgColor: 'fill-primary-500 bg-primary-500',
 			iconBgColor: 'bg-primary-400',
 			header: 'The World Wide Web',
-			body: `.NET is a fantastic language but prior to Blazor (when I started learning in 2016), devs still ultimately needed to mix .NET and React, Vue, etc. in most cases to create truly interactive web applications. Understanding this, I took the opportunity to learn and have had the pleasure of working with web tech of all kinds, building from the basics (HTML, CSS, JS, Jquery, etc.) up to the more advanced (React, Svelte, Vue, etc.).`,
-			sliced: 'right'
+			body: `.NET is a fantastic language but prior to Blazor (when I started learning in 2016), devs still ultimately needed to mix .NET and React, Vue, etc. in most cases to create truly interactive web applications. Understanding this, I took the opportunity to learn and have had the pleasure of working with web tech of all kinds, building from the basics (HTML, CSS, JS, Jquery, etc.) up to the more advanced (React, Svelte, Vue, etc.).`
 		},
 		{
 			iconUrl: '/icons/feather/24/hard-drive.svg',
 			bgColor: 'fill-secondary-600 bg-secondary-600',
 			iconBgColor: 'bg-secondary-400/70',
 			header: 'The Cloud Will Set You Free!',
-			body: `Servers and physical infra are great but so is having all of that and more without the overhead of managing it. That is my ideal sweet spot in terms of how I approach infra and has been a major focal point for what I do and the solutions I create. It's fast, scalable, and in most use cases cost effective. There are of course exceptions, respect and love for on-prem, but the cloud has my heart. Azure, AWS, GCP, Cloudflare... Yes please!`,
-			sliced: 'left'
+			body: `Servers and physical infra are great but so is having all of that and more without the overhead of managing it. That is my ideal sweet spot in terms of how I approach infra and has been a major focal point for what I do and the solutions I create. It's fast, scalable, and in most use cases cost effective. There are of course exceptions, respect and love for on-prem, but the cloud has my heart. Azure, AWS, GCP, Cloudflare... Yes please!`
 		},
 		{
 			iconUrl: '/icons/feather/24/package.svg',
 			bgColor: 'fill-tertiary-500 bg-tertiary-500',
 			iconBgColor: 'bg-tertiary-400',
 			header: 'DevOps Is Dope!',
-			body: `And Infrastucture as Code (IaC) is what makes it so good. There is something so satisfying about being able to deploy all your infra with just code AKA IaC. It's feel almost like having freaking superpowers sometimes, the things we can do with just code. I mean its not all unicorns and rainbows but its still my happy place. SST, CDK, ARM, Terraform, Pulumi... I love them all!*`,
-			sliced: 'right'
+			body: `And Infrastucture as Code (IaC) is what makes it so good. There is something so satisfying about being able to deploy all your infra with just code AKA IaC. It's feel almost like having freaking superpowers sometimes, the things we can do with just code. I mean its not all unicorns and rainbows but its still my happy place. SST, CDK, ARM, Terraform, Pulumi... I love them all!*`
 		},
 		{
 			iconUrl: '/icons/feather/24/layers.svg',
 			bgColor: 'fill-primary-500 bg-primary-500',
 			iconBgColor: 'bg-primary-400',
 			header: 'The Stack Is Full But Not Overflowing',
-			body: `Frontend, backend, databases, infra, CI/CD, the whole gambit. Too much to master but things are so good nowadays, there is so much you can do from a full-stack perspective and do efficiently. Its certainly not the easy path but with time and a whole lot of effort, it is very rewarding. `,
-			sliced: 'left'
+			body: `Frontend, backend, databases, infra, CI/CD, the whole gambit. Too much to master but things are so good nowadays, there is so much you can do from a full-stack perspective and do efficiently. Its certainly not the easy path but with time and a whole lot of effort, it is very rewarding. `
 		}
 		// Add more cards as needed
 	];
 </script>
 
 <div class="main">
-	<div class="pt-4 px-8 grid grid-cols-3 gap-x-12 place-items-center">
+	<div class="fixed overflow-visible -z-10 h-full w-screen -mt-32">
+		<HexBackground />
+	</div>
+	<div
+		class="z-10 pt-4 px-8 py-4 grid grid-cols-3 gap-x-12 place-items-center bg-primary-200 shadow-xl border border-b-1 border-primary-300/70 dark:bg-secondary-800/70 dark:border-secondary-900/70"
+	>
 		<div class="max-[1024px]:col-span-3 lg:col-span-1 flex flex-col items-center">
 			<div class="flex flex-row mb-4">
 				<h1
@@ -126,63 +124,26 @@
 			</p>
 		</div>
 	</div>
-	<hr class="my-4" />
 
-	<div class="container mx-auto px-4">
-		<div class="z-10 h-full w-screen">
-			<BackGround />
-		</div>
-		{#each cards as card, index}
-			<HexCard
-				{index}
-				iconUrl={card.iconUrl}
-				bgColor={card.bgColor}
-				iconBgColor={card.iconBgColor}
-				header={card.header}
-				body={card.body}
-				sliced={mediaSize == 'lg' || mediaSize == 'xl'
-					? index % 2 === 0
-						? 'left'
-						: 'right'
-					: 'full'}
-				{mediaSize}
-			/>
-		{/each}
-		<span class="pr-4 -mt-4 tiny-text right-0 absolute font-mono">* Excludes CloudFormation</span>
-	</div>
-
-	<!-- Professional Section -->
-	<div class="container mx-auto px-4">
-		<div class="flex flex-col md:flex-row md:flex-wrap">
-			<!-- Section 1 -->
-			<div class="flex md:w-1/2">
-				<div class="w-full md:w-1/2 p-4 text-center md:text-right">
-					<h3 class="text-xl font-semibold mb-2">Development</h3>
-					<p>
-						Passionate about creating scalable cloud solutions and crafting efficient devops
-						pipelines.
-					</p>
-				</div>
-				<div class="w-full md:w-1/2 p-4 flex justify-center md:justify-start items-center">
-					<!-- Your icon/graphic goes here -->
-				</div>
-			</div>
-
-			<!-- Section 2 -->
-			<div class="flex md:w-1/2 flex-row-reverse">
-				<div class="w-full md:w-1/2 p-4 text-center md:text-left">
-					<h3 class="text-xl font-semibold mb-2">Mortgage</h3>
-					<p>
-						Decade of experience in mortgage industry, with a deep understanding of technology's
-						role in it.
-					</p>
-				</div>
-				<div class="w-full md:w-1/2 p-4 flex justify-center md:justify-end items-center">
-					<!-- Your icon/graphic goes here -->
-				</div>
-			</div>
-
-			<!-- Repeat for other sections -->
+	<div class="container mx-auto px-4 h-full">
+		<div class="relative">
+			{#each cards as card, index}
+				<HexCard
+					{index}
+					iconUrl={card.iconUrl}
+					bgColor={card.bgColor}
+					iconBgColor={card.iconBgColor}
+					header={card.header}
+					body={card.body}
+					sliced={mediaSize == 'lg' || mediaSize == 'xl'
+						? index % 2 === 0
+							? 'left'
+							: 'right'
+						: 'full'}
+					{mediaSize}
+				/>
+			{/each}
+			<span class="pr-4 -mt-4 tiny-text right-0 absolute font-mono">* Excludes CloudFormation</span>
 		</div>
 	</div>
 
