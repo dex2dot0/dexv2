@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { browser } from '$app/environment';
 	import LoadingSpinner from '../components/LoadingSpinner.svelte';
 	import BrandLogos from '../components/brand-logos/BrandLogos.svelte';
 	import WavingHandIcon from '../components/icons/WavingHand.svelte';
@@ -17,18 +16,45 @@
 		'7': 'agile'
 	};
 
+	let interval: any;
+	let timeout: any;
+	let nameAnimationTimeout: any;
+
 	$: prefersReducedMotion = false;
 	$: currentDivFocus = '0';
 	$: currentCategory = '';
 	$: sentence = '';
 
-	let names: string[] = ['Dexter', 'Cliff', 'Clifford', 'Cliffy', 'Dex2.0'];
+	let names: string[] = ['Dexter', 'Cliff', 'Clifford', 'Dex2.0'];
 	$: name = 'Dexter';
 	$: nameClass = 'h2 bg-primary-500 gradient-heading-secondary uppercase';
 	$: stopBlink = false;
 
 	let width: number;
 	let mediaSize: string;
+
+	function clearAllAnimations() {
+		clearInterval(interval);
+		clearTimeout(timeout);
+		clearTimeout(nameAnimationTimeout);
+	}
+
+	function restartAnimations() {
+		clearAllAnimations(); // Clear all existing intervals and timeouts
+
+		// Reset the initial states if needed
+		currentDivFocus = '0';
+		currentCategory = 'api-dev';
+
+		typeSentence(200, 1000);
+		animateName();
+
+		interval = setInterval(() => {
+			currentDivFocus = String((Number(currentDivFocus) + 1) % 8);
+			currentCategory = categoryMap[currentDivFocus];
+			typeSentence();
+		}, 5000);
+	}
 
 	function waitForMs(ms: number) {
 		return new Promise((resolve) => setTimeout(resolve, ms));
@@ -94,7 +120,6 @@
 	}
 
 	onMount(() => {
-		// set prefersReducedMotion
 		const mediaQueryReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 		prefersReducedMotion = mediaQueryReduceMotion.matches;
 
@@ -105,46 +130,22 @@
 			sentence = 'Programming';
 			return;
 		}
-		let timeout = setTimeout(() => {
-			currentCategory = 'api-dev';
-			typeSentence(200, 1000);
-			animateName();
-		}, 1000);
 
-		window.addEventListener('resize', handleResize);
-		handleResize();
-
-		let interval = setInterval(() => {
-			// change image on timer
-			currentDivFocus = String((Number(currentDivFocus) + 1) % 8);
-
-			// change category on timer
-			currentCategory = categoryMap[currentDivFocus];
-			typeSentence();
-		}, 5000);
+		// Initial animation start
+		restartAnimations();
 
 		document.addEventListener('visibilitychange', () => {
-			if (document.visibilityState === 'hidden') {
-				// clear typing animations
-				clearInterval(interval);
-				clearTimeout(timeout);
-			} else {
-				// reset typing animations
-				currentCategory = 'api-dev';
-				typeSentence(200, 1000);
-				animateName();
-
-				interval = setInterval(() => {
-					currentDivFocus = String((Number(currentDivFocus) + 1) % 8);
-					currentCategory = categoryMap[currentDivFocus];
-					typeSentence();
-				}, 5000);
+			if (!prefersReducedMotion) {
+				if (document.visibilityState === 'hidden') {
+					clearAllAnimations();
+				} else {
+					restartAnimations();
+				}
 			}
 		});
 
-		return () => {
-			clearInterval(interval);
-		};
+		window.addEventListener('resize', handleResize);
+		handleResize();
 	});
 
 	const handleResize = () => {

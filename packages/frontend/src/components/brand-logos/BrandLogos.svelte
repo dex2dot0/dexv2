@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let mediaSize: string;
+	export let mediaSize;
 	export let currentCategory: string = '';
 
 	import Amplify from './Amplify.svelte';

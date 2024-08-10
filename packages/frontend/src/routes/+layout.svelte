@@ -17,8 +17,8 @@
 			href: '/about'
 		},
 		{
-			name: 'Contact',
-			href: '/contact'
+			name: 'Blog',
+			href: '/blog'
 		}
 	];
 </script>
@@ -26,7 +26,7 @@
 <svelte:head
 	>{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}</svelte:head
 >
-<div class="min-h-screen h-screen min-w-max w-screen">
+<div class="h-lvh min-w-max w-screen overflow-y-visible">
 	<div>
 		<AppBar
 			background="bg-tertiary-700 dark:bg-surface-800"
@@ -35,7 +35,7 @@
 			slotTrail="place-content-end"
 		>
 			<svelte:fragment slot="lead"><LightSwitch class="ml-6" /></svelte:fragment>
-			<img height="60" width="60" alt="dexv2 logo" src="/logos/dex2logo.webp" />
+			<a href="/"><img height="60" width="60" alt="dexv2 logo" src="/logos/dex2logo.webp" /></a>
 			<svelte:fragment slot="trail">
 				<div class="relative inline-block">
 					<button

@@ -27,6 +27,21 @@
 
 body {
 	overflow-x: hidden;
+	height: 100vh;
+}
+
+@layer utilities {
+	.bg-global {
+		background: #75367a;
+		fill: #75367a;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.bg-global {
+			background: #505052;
+			fill: #505052;
+		}
+	}
 }
 
 .gradient-heading {
@@ -43,4 +58,39 @@ body {
 	@apply bg-gradient-to-b;
 	/* Color Stops */
 	@apply from-secondary-600 via-tertiary-400 to-primary-500;
+}
+
+.gradient-heading-surface {
+	@apply bg-clip-text text-transparent box-decoration-clone;
+	/* Direction */
+	@apply bg-gradient-to-b;
+	/* Color Stops */
+	@apply from-surface-600 via-tertiary-400 to-secondary-500;
+}
+
+.gradient-hr {
+	height: 4px;
+	border: 1px;
+	background-size: 400% 400%;
+	animation: pulse-hr 8s ease infinite;
+	background-image: linear-gradient(
+		to right,
+		#db268a,
+		#9c48a2,
+		#35548a,
+		#9c48a2,
+		#db268a
+	); /* Adjust the colors as needed */
+}
+
+@keyframes pulse-hr {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

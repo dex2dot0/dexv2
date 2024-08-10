@@ -20,7 +20,7 @@ const config = {
 	plugins: [
 		skeleton({
 			themes: {
-				custom: [ dexTheme ]
+				custom: [dexTheme]
 			}
 		})
 	]
