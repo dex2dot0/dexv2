@@ -75,7 +75,6 @@
 			header: 'The Stack Is Full But Not Overflowing',
 			body: `Frontend, backend, databases, infra, CI/CD, the whole gambit. Too much to master but things are so good nowadays, there is so much you can do from a full-stack perspective and do efficiently. Its certainly not the easy path but with time and a whole lot of effort, it is very rewarding. `
 		}
-		// Add more cards as needed
 	];
 </script>
 

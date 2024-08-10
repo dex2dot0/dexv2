@@ -26,14 +26,14 @@
 					</div>
 				</div>
 				<div class="basis-4/12 sm:mt-16 text-center sm:text-left ml-4">
-					<h2 class="text-xl font-bold mb-2 p-2 {bgColor} rounded-md">{header}</h2>
+					<h2 class="text-xl font-bold mb-2 p-2 {bgColor} rounded-md text-white">{header}</h2>
 					<p class="">{body}</p>
 				</div>
 			</div>
 		{:else if sliced === 'right'}
 			<div class={marginClass}>
 				<div class="basis-4/12 sm:mt-16 text-center sm:text-right mr-4">
-					<h2 class="text-xl font-bold mb-2 p-2 {bgColor} rounded-md">{header}</h2>
+					<h2 class="text-xl font-bold mb-2 p-2 {bgColor} rounded-md text-white">{header}</h2>
 					<p class="">{body}</p>
 				</div>
 				<div class="basis-2/12 flex justify-start">
