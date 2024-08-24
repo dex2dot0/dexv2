@@ -58,6 +58,7 @@
 	</defs>
 	{#each hexagons as { x, y }}
 		<polygon
+			class="hover:fill-primary-500"
 			points="
         {x + hexRadius}, {y}
         {x + hexRadius / 2}, {y + (Math.sqrt(3) * hexRadius) / 2}
@@ -66,7 +67,7 @@
         {x - hexRadius / 2}, {y - (Math.sqrt(3) * hexRadius) / 2}
         {x + hexRadius / 2}, {y - (Math.sqrt(3) * hexRadius) / 2}
       "
-			fill={distanceToMouse(x, y) < highlightDistance ? 'url(#hexGradient)' : 'none'}
+			fill="none"
 			stroke="url(#hexGradient)"
 			stroke-width={distanceToMouse(x, y) < highlightDistance ? 4 : 2}
 			opacity={1 - Math.min(distanceToMouse(x, y) / highlightDistance, 1) * 0.5}
