@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { prefersReducedMotion } from '$lib/stores/motion';
 	import LoadingSpinner from '../components/LoadingSpinner.svelte';
 	import BrandLogos from '../components/brand-logos/BrandLogos.svelte';
 	import WavingHandIcon from '../components/icons/WavingHand.svelte';
@@ -20,7 +21,6 @@
 	let timeout: any;
 	let nameAnimationTimeout: any;
 
-	$: prefersReducedMotion = false;
 	$: currentDivFocus = '0';
 	$: currentCategory = '';
 	$: sentence = '';
@@ -120,10 +120,7 @@
 	}
 
 	onMount(() => {
-		const mediaQueryReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-		prefersReducedMotion = mediaQueryReduceMotion.matches;
-
-		if (prefersReducedMotion) {
+		if ($prefersReducedMotion) {
 			handleResize();
 			stopBlink = true;
 			currentCategory = 'web-dev';
@@ -135,7 +132,7 @@
 		restartAnimations();
 
 		document.addEventListener('visibilitychange', () => {
-			if (!prefersReducedMotion) {
+			if (!$prefersReducedMotion) {
 				if (document.visibilityState === 'hidden') {
 					clearAllAnimations();
 				} else {

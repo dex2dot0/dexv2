@@ -6,6 +6,7 @@
 	import Transition from 'svelte-transition';
 	import Footer from '../components/Footer.svelte';
 	import { screenSize } from '$lib/stores/screensize';
+	import { prefersReducedMotion } from '$lib/stores/motion';
 
 	const menu = createMenu({ label: 'Actions' });
 
@@ -31,6 +32,9 @@
 				width: window.innerWidth
 			});
 		}
+
+		const mediaQueryReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+		prefersReducedMotion.set(mediaQueryReduceMotion.matches);
 
 		updateScreenSize();
 		window.addEventListener('resize', updateScreenSize);
