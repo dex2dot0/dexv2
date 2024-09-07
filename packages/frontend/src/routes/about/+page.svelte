@@ -79,7 +79,7 @@
 </script>
 
 <div class="main">
-	<div class="fixed overflow-visible -z-10 h-lvh w-screen -mt-32">
+	<div class="fixed left-0 top-0 overflow-visible -z-10 h-lvh w-screen">
 		<HexBackground />
 	</div>
 	<div
