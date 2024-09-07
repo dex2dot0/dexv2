@@ -1,9 +1,12 @@
 <script lang="ts">
 	import '../app.postcss';
+	import { onMount } from 'svelte';
 	import { AppBar, LightSwitch, autoModeWatcher } from '@skeletonlabs/skeleton';
 	import { createMenu } from 'svelte-headlessui';
 	import Transition from 'svelte-transition';
 	import Footer from '../components/Footer.svelte';
+	import { screenSize } from '$lib/stores/screensize';
+	import { prefersReducedMotion } from '$lib/stores/motion';
 
 	const menu = createMenu({ label: 'Actions' });
 
@@ -21,6 +24,25 @@
 			href: '/blog'
 		}
 	];
+
+	// onmount wire up the screenSize store
+	onMount(() => {
+		function updateScreenSize() {
+			screenSize.set({
+				width: window.innerWidth
+			});
+		}
+
+		const mediaQueryReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+		prefersReducedMotion.set(mediaQueryReduceMotion.matches);
+
+		updateScreenSize();
+		window.addEventListener('resize', updateScreenSize);
+
+		return () => {
+			window.removeEventListener('resize', updateScreenSize);
+		};
+	});
 </script>
 
 <svelte:head
