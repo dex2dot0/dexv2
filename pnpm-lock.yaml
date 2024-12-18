@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -26,8 +30,8 @@ importers:
         specifier: ^0.0.33
         version: 0.0.33
       svelte-transition:
-        specifier: ^0.0.10
-        version: 0.0.10(svelte@4.2.14)
+        specifier: ^0.0.17
+        version: 0.0.17(svelte@4.2.14)
     devDependencies:
       '@floating-ui/dom':
         specifier: ^1.6.3
@@ -7323,10 +7327,10 @@ packages:
       typescript: 5.3.3
     dev: true
 
-  /svelte-transition@0.0.10(svelte@4.2.14):
-    resolution: {integrity: sha512-BN8XDA7dKyuh+Lmdn3vxCzJd3M7L4BLdRziIAJew2AiBFMcrJJg8srEMYYoTCOLtYJ2Oqlv3+3/K5b6uHM8LSg==}
+  /svelte-transition@0.0.17(svelte@4.2.14):
+    resolution: {integrity: sha512-df3kJdJogRNDGiEwJSb7Pdk8/7ZTcQapHhtQ5VicaT/oUP/BNH5qR5Q3sKvptBvOD0uJSzjjMVC5oLwdgjUdRw==}
     peerDependencies:
-      svelte: ^3.59.1 || ^4.0.0
+      svelte: ^3.59.1 || ^4.0.0 || ^5.0.0
     dependencies:
       svelte: 4.2.14
     dev: false
@@ -8181,7 +8185,3 @@ packages:
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: true
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
