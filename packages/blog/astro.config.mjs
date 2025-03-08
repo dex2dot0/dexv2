@@ -7,7 +7,7 @@ import aws from 'astro-sst';
 
 // https://astro.build/config
 export default defineConfig({
-	site: import.meta.env.URL,
+	site: process.env.URL,
 	integrations: [mdx(), sitemap(), solidJs(), tailwind({ applyBaseStyles: false })],
 	adapter: aws({
 		deploymentStrategy: 'static',
