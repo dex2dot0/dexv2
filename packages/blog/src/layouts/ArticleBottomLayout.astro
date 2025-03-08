@@ -17,8 +17,8 @@ const items = ((await getCollection(collection)) as Array<CollectionEntry<"blog"
   .filter(post => !post.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 const index = items.findIndex(x => x.slug === entry.slug)
-const prev = items[(index - 1 + items.length) % items.length]
-const next = items[(index + 1) % items.length]
+const prev: any | CollectionEntry<"blog"> | CollectionEntry<"projects"> = items[(index - 1 + items.length) % items.length]
+const next: any | CollectionEntry<"blog"> | CollectionEntry<"projects"> = items[(index + 1) % items.length]
 ---
 
 <div>
