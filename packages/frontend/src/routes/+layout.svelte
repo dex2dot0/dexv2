@@ -21,7 +21,7 @@
 		},
 		{
 			name: 'Blog',
-			href: '/blog'
+			href: 'https://blog.dexv2.com'
 		}
 	];
 
