@@ -23,8 +23,12 @@ export const SEARCH: Page = {
 // Links
 export const LINKS: Links = [
 	{
-		TEXT: 'Blog Home',
+		TEXT: 'Blog',
 		HREF: '/',
+	},
+	{
+		TEXT: 'dexv2.com',
+		HREF: 'https://dexv2.com',
 	},
 ];
 

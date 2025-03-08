@@ -3,7 +3,7 @@ import { SITE, SOCIALS } from "@consts"
 import Container from "@components/Container.astro"
 ---
 
-<footer class="relative bg-tertiary-700/50 dark:bg-surface-800/50 pt-3">
+<footer class="relative bg-tertiary-300 dark:bg-surface-800/50 pt-3">
   <div class="animate">
     <section class="py-5">
       <Container size="md">
@@ -31,7 +31,7 @@ import Container from "@components/Container.astro"
                     href={SOCIAL.HREF} 
                     target="_blank" 
                     aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`} 
-                    class="group size-10 rounded-full p-2 items-center justify-center hover:bg-black/5 dark:hover:bg-white/20  blend"
+                    class="group size-14 rounded-full p-2 items-center justify-center hover:bg-black/5 dark:hover:bg-white/20  blend"
                   >
                     <svg class="size-full fill-current group-hover:fill-black group-hover:dark:fill-white blend">
                       <use href={`/social.svg#${SOCIAL.ICON}`} />

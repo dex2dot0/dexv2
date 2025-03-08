@@ -6,11 +6,11 @@ const subpath = pathname.match(/[^/]+/g)
 import Container from "@components/Container.astro"
 ---
 
-<header id="header" class="fixed top-0 w-full h-16 z-50 ">
-  <Container size="md">
+<header id="header" class="fixed w-full h-24 z-50">
+  <Container size="lg">
     <div class="relative h-full w-full">
     <div class="absolute flex gap-1 left-0 top-1/2 -translate-y-1/2">
-       <button id="header-theme-button" aria-label={`Toggle light and dark theme`} class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
+       <button id="header-theme-button" aria-label={`Toggle light and dark theme`} class={cn("hidden md:flex", "size-10 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/30 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
         <svg class="size-full block dark:hidden">
           <use href="/ui.svg#sun"></use>
         </svg>
@@ -32,7 +32,7 @@ import Container from "@components/Container.astro"
       <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-1 font-semibold">
         <a href="https://dexv2.com/" class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
           <div class="flex items-center gap-2">
-            <img src="/dex2logo.webp" alt="Dex2" class="w-12 h-12" />
+            <img src="/dex2logo.webp" alt="Dex2" class="w-16 h-16" />
           </div>
         </a>
       </div>
