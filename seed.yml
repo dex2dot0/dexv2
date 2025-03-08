@@ -1,0 +1,5 @@
+check_code_change: pnpm
+
+before_compile:
+  # use node LTS
+  - n 22.14.0
