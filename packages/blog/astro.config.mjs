@@ -7,7 +7,7 @@ import aws from 'astro-sst';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://astro-sphere-demo.vercel.app',
+	site: import.meta.env.URL,
 	integrations: [mdx(), sitemap(), solidJs(), tailwind({ applyBaseStyles: false })],
 	adapter: aws({
 		deploymentStrategy: 'static',

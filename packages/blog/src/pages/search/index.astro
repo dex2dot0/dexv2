@@ -7,7 +7,7 @@ import Search from "@components/Search"
 import { SEARCH } from "@consts"
 
 const posts = (await getCollection("blog"))
-  .filter(post => !post.data.draft)
+  .filter((post:any) => !post.data.draft)
 
 const data = [...posts] as CollectionEntry<"blog">[]
 ---

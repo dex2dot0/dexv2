@@ -12,6 +12,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {
+		"@tsconfig/node22": "^22.0.0",
 		"aws-cdk-lib": "2.132.1",
 		"constructs": "10.3.0",
 		"sst": "2.47.3",

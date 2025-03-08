@@ -1,5 +1,6 @@
 import { AstroSite, StackContext, use } from 'sst/constructs';
 import { DNS } from './DNS';
+import { env } from '$env/dynamic/private';
 
 export function DexBlog({ stack }: StackContext) {
 	const dns = use(DNS);
@@ -13,6 +14,9 @@ export function DexBlog({ stack }: StackContext) {
 		},
 		path: 'packages/blog',
 		buildCommand: 'pnpm run build',
+		environment: {
+			URL: `https://blog.${dns.zone}`,
+		},
 	});
 
 	// Add the site's URL to stack output
