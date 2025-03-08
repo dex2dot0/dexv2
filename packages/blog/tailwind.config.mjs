@@ -1,61 +1,158 @@
-import defaultTheme from "tailwindcss/defaultTheme"
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ["class"],
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  theme: {
-    extend: {
-      fontFamily: {
-        "sans": ["Atkinson", ...defaultTheme.fontFamily.sans],
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            maxWidth: "full",
-          },
-        },
-      },
-      rotate: {
-        "45": "45deg",
-        "135": "135deg",
-        "225": "225deg",
-        "315": "315deg",
-      },
-      animation: {
-        twinkle: "twinkle 2s ease-in-out forwards",
-        meteor: "meteor 3s ease-in-out forwards",
-      },
-      keyframes: {
-        twinkle: {
-          "0%": { 
-            opacity: 0, 
-            transform: "rotate(0deg)" 
-          },
-          "50%": { 
-            opacity: 1,
-            transform: "rotate(180deg)" 
-          },
-          "100%": { 
-            opacity: 0, 
-            transform: "rotate(360deg)" 
-          },
-        },
-        meteor: {
-          "0%": { 
-            opacity: 0, 
-            transform: "translateY(200%)" 
-          },
-          "50%": { 
-            opacity: 1  
-          },
-          "100%": { 
-            opacity: 0, 
-            transform: "translateY(0)" 
-          },
-        },
-      },
-    },
-  },
-  plugins: [require("@tailwindcss/typography")],
-}
+	darkMode: ['class'],
+	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	theme: {
+		extend: {
+			fontFamily: {
+				// Matches the "--theme-font-family-base" and "--theme-font-family-heading"
+				sans: [
+					'Inter',
+					'ui-sans-serif',
+					'system-ui',
+					'-apple-system',
+					'BlinkMacSystemFont',
+					"'Segoe UI'",
+					'Roboto',
+					"'Helvetica Neue'",
+					'Arial',
+					"'Noto Sans'",
+					'sans-serif',
+					"'Apple Color Emoji'",
+					"'Segoe UI Emoji'",
+					"'Segoe UI Symbol'",
+					"'Noto Color Emoji'",
+				],
+				heading: [
+					'Inter',
+					'ui-sans-serif',
+					'system-ui',
+					'-apple-system',
+					'BlinkMacSystemFont',
+					"'Segoe UI'",
+					'Roboto',
+					"'Helvetica Neue'",
+					'Arial',
+					"'Noto Sans'",
+					'sans-serif',
+					"'Apple Color Emoji'",
+					"'Segoe UI Emoji'",
+					"'Segoe UI Symbol'",
+					"'Noto Color Emoji'",
+				],
+			},
+			// These values replicate the CSS variables for color scales
+			colors: {
+				primary: {
+					50: '#fadeed',
+					100: '#f8d4e8',
+					200: '#f6c9e2',
+					300: '#f1a8d0',
+					400: '#e667ad',
+					500: '#db268a',
+					600: '#c5227c',
+					700: '#a41d68',
+					800: '#831753',
+					900: '#6b1344',
+				},
+				secondary: {
+					50: '#e1e5ed',
+					100: '#d7dde8',
+					200: '#cdd4e2',
+					300: '#aebbd0',
+					400: '#7287ad',
+					500: '#35548a',
+					600: '#304c7c',
+					700: '#283f68',
+					800: '#203253',
+					900: '#1a2944',
+				},
+				tertiary: {
+					50: '#f0e4f1',
+					100: '#ebdaec',
+					200: '#e6d1e8',
+					300: '#d7b6da',
+					400: '#ba7fbe',
+					500: '#9c48a2',
+					600: '#8c4192',
+					700: '#75367a',
+					800: '#5e2b61',
+					900: '#4c234f',
+				},
+				success: {
+					50: '#d9e9e8',
+					100: '#cce2e1',
+					200: '#bfdbd9',
+					300: '#99c5c2',
+					400: '#4d9a95',
+					500: '#006f67',
+					600: '#00645d',
+					700: '#00534d',
+					800: '#00433e',
+					900: '#003632',
+				},
+				warning: {
+					50: '#f9eae1',
+					100: '#f6e2d7',
+					200: '#f4dbce',
+					300: '#eec6b0',
+					400: '#e19b74',
+					500: '#d47039',
+					600: '#bf6533',
+					700: '#9f542b',
+					800: '#7f4322',
+					900: '#68371c',
+				},
+				error: {
+					50: '#fadbe7',
+					100: '#f8cfde',
+					200: '#f7c3d6',
+					300: '#f29ebe',
+					400: '#e8568d',
+					500: '#de0d5c',
+					600: '#c80c53',
+					700: '#a70a45',
+					800: '#850837',
+					900: '#6d062d',
+				},
+				surface: {
+					50: '#ededed',
+					100: '#e7e7e7',
+					200: '#e1e1e2',
+					300: '#cfced0',
+					400: '#aaaaac',
+					500: '#868589',
+					600: '#79787b',
+					700: '#656467',
+					800: '#505052',
+					900: '#424143',
+				},
+			},
+			borderRadius: {
+				// Maps to "--theme-rounded-base" (very large) and "--theme-rounded-container"
+				full: '9999px',
+				xl: '8px',
+			},
+			borderWidth: {
+				// Equivalent to "--theme-border-base"
+				base: '1px',
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: 'full',
+					},
+				},
+			},
+			rotate: {
+				45: '45deg',
+				135: '135deg',
+				225: '225deg',
+				315: '315deg',
+			},
+		},
+	},
+	plugins: [require('@tailwindcss/typography')],
+};
