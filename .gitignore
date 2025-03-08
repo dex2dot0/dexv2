@@ -5,6 +5,9 @@ node_modules
 .sst
 .build
 
+#astro
+**/.astro/
+
 # opennext
 .open-next
 
