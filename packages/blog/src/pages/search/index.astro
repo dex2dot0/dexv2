@@ -10,7 +10,7 @@ const posts = (await getCollection("blog"))
   .filter(post => !post.data.draft)
 
 const projects = (await getCollection("projects"))
-  .filter((post: CollectionEntry<"projects">) => !post.data.draft)
+  .filter((post: any | CollectionEntry<"projects">) => !post.data.draft)
 
 const data = [...posts, ...projects] as CollectionEntry<"blog">[]
 ---
