@@ -6,7 +6,9 @@ type Props = {
 }
 
 // Get the requested entry
-const { entry } = Astro.props
+const { entry } = Astro.props as {
+  entry: CollectionEntry<"blog"> | CollectionEntry<"projects">
+};
 const { collection } = entry
 const { Content } = await entry.render()
 
