@@ -2,23 +2,23 @@
 import { type CollectionEntry, getCollection } from "astro:content"
 
 type Props = {
-  entry: any | CollectionEntry<"blog"> | CollectionEntry<"projects">
+  entry: CollectionEntry<"blog">
 }
 
 // Get the requested entry
 const { entry } = Astro.props as {
-  entry: any | CollectionEntry<"blog"> | CollectionEntry<"projects">
+  entry: CollectionEntry<"blog">
 };
 const { collection } = entry
 const { Content } = await entry.render()
 
 // Get the next and prev entries (modulo to wrap index)
-const items = ((await getCollection(collection)) as Array<CollectionEntry<"blog"> | CollectionEntry<"projects">>)
+const items = ((await getCollection(collection)) as Array<CollectionEntry<"blog">>)
   .filter((post:any) => !post?.data?.draft)
   .sort((a: any, b: any) => b.data.date.getTime() - a.data.date.getTime())
 const index = items.findIndex((x: any) => x?.slug === entry?.slug)
-const prev: any | CollectionEntry<"blog"> | CollectionEntry<"projects"> = items[(index - 1 + items.length) % items.length]
-const next: any | CollectionEntry<"blog"> | CollectionEntry<"projects"> = items[(index + 1) % items.length]
+const prev: CollectionEntry<"blog"> = items[(index - 1 + items.length) % items.length]
+const next: CollectionEntry<"blog"> = items[(index + 1) % items.length]
 ---
 
 <div>
