@@ -8,9 +8,10 @@ import aws from 'astro-sst';
 // https://astro.build/config
 export default defineConfig({
 	site: process.env.URL,
+	output: 'server',
 	integrations: [mdx(), sitemap(), solidJs(), tailwind({ applyBaseStyles: false })],
 	adapter: aws({
-		deploymentStrategy: 'static',
+		deploymentStrategy: 'regional',
 	}),
 	image: {
 		service: passthroughImageService(),
