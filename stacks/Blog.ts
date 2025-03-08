@@ -1,7 +1,7 @@
 import { AstroSite, StackContext, use } from 'sst/constructs';
 import { DNS } from './DNS';
 
-export default function DexBlog({ stack }: StackContext) {
+export function DexBlog({ stack }: StackContext) {
 	const dns = use(DNS);
 
 	// Create the Astro site
