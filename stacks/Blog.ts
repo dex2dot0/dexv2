@@ -15,6 +15,6 @@ export function DexBlog({ stack }: StackContext) {
 
 	// Add the site's URL to stack output
 	stack.addOutputs({
-		URL: site.url,
+		BLOG_URL: site.url,
 	});
 }
