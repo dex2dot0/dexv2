@@ -1,11 +1,11 @@
-import { StaticSite, StackContext, use } from 'sst/constructs';
+import { AstroSite, StackContext, use } from 'sst/constructs';
 import { DNS } from './DNS';
 
 export function DexBlog({ stack }: StackContext) {
 	const dns = use(DNS);
 
 	// Create the Astro site
-	const site = new StaticSite(stack, 'DexBlog', {
+	const site = new AstroSite(stack, 'DexBlog', {
 		customDomain: {
 			domainName: `blog.${dns.zone}`,
 			hostedZone: dns.domain,
@@ -13,7 +13,6 @@ export function DexBlog({ stack }: StackContext) {
 		},
 		path: 'packages/blog',
 		buildCommand: 'pnpm run build',
-		buildOutput: 'dist',
 	});
 
 	// Add the site's URL to stack output
