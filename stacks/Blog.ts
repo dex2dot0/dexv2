@@ -11,6 +11,7 @@ export function DexBlog({ stack }: StackContext) {
 			hostedZone: dns.domain,
 		},
 		path: 'packages/blog',
+		buildCommand: 'pnpm run build',
 	});
 
 	// Add the site's URL to stack output
