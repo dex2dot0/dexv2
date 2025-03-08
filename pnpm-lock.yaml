@@ -51,8 +51,8 @@ importers:
         specifier: ^4.4.13
         version: 4.16.18(@types/node@20.11.24)(rollup@4.34.8)(typescript@5.4.5)
       astro-sst:
-        specifier: ^3.0.4
-        version: 3.0.4
+        specifier: ^2.45.2
+        version: 2.45.2
       clsx:
         specifier: ^2.1.0
         version: 2.1.1
@@ -268,6 +268,10 @@ packages:
   '@astrojs/telemetry@3.1.0':
     resolution: {integrity: sha512-/ca/+D8MIKEC8/A9cSaPUqQNZm+Es/ZinRv0ZAzvu2ios7POQSsVD+VOj7/hypWNsNM3T7RpfgNq7H2TU1KEHA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
+
+  '@astrojs/webapi@3.0.0':
+    resolution: {integrity: sha512-+/Wruju2Ho99z0jI8zxMFGBkKKG97RzR/srSaColejUDrczkAjR3HjULKTVfDdIpvtvFZLyl7OMBmHKQazfeZg==}
+    deprecated: This package is not used by Astro any more and is no longer maintained. In Astro 3.0 polyfills are part of a core module.
 
   '@astrojs/yaml2ts@0.2.2':
     resolution: {integrity: sha512-GOfvSr5Nqy2z5XiwqTouBBpy5FyI6DEe+/g/Mk5am9SjILN1S5fOEvYK0GuWHg98yS/dobP4m8qyqw/URW35fQ==}
@@ -2336,8 +2340,8 @@ packages:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
 
-  astro-sst@3.0.4:
-    resolution: {integrity: sha512-RbAmrdX4GqqfU1mh/dGAekczv2+1a41Uk9zSW27ty0EEGHWDRFLEmCehxU9tareL//GT3/zp+Hc6bEolWXZXQA==}
+  astro-sst@2.45.2:
+    resolution: {integrity: sha512-Zrrip/9VP5kvoQJ+Kj2tJA1h7mQ3ShAsfKXMqVcz8vqMqCsFjEZPLHDu8zYTGMr3WOX8r3vzY6u5nOeaKFg8ZQ==}
 
   astro@4.16.18:
     resolution: {integrity: sha512-G7zfwJt9BDHEZwlaLNvjbInIw2hPryyD654314KV/XT34pJU6SfN1S+mWa8RAkALcZNJnJXCJmT3JXLQStD3Lw==}
@@ -4871,9 +4875,6 @@ packages:
   set-cookie-parser@2.6.0:
     resolution: {integrity: sha512-RVnVQxTXuerk653XfuliOxBP81Sf0+qfQE73LIYKcyMYHG94AuH0kgrQpRDuTZnSmjpysHmzxJXKNfa6PjFhyQ==}
 
-  set-cookie-parser@2.7.1:
-    resolution: {integrity: sha512-IOc8uWeOZgnb3ptbCURJWNjWUPcO3ZnTTdzsurqERrP6nPyv+paC55vJM0LpOlT2ne+Ix+9+CRG1MNLlyZ4GjQ==}
-
   setprototypeof@1.2.0:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
 
@@ -6078,6 +6079,10 @@ snapshots:
       which-pm-runs: 1.1.0
     transitivePeerDependencies:
       - supports-color
+
+  '@astrojs/webapi@3.0.0':
+    dependencies:
+      undici: 5.28.4
 
   '@astrojs/yaml2ts@0.2.2':
     dependencies:
@@ -9069,9 +9074,10 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-sst@3.0.4:
+  astro-sst@2.45.2:
     dependencies:
-      set-cookie-parser: 2.7.1
+      '@astrojs/webapi': 3.0.0
+      set-cookie-parser: 2.6.0
 
   astro@4.16.18(@types/node@20.11.24)(rollup@4.34.8)(typescript@5.4.5):
     dependencies:
@@ -12250,8 +12256,6 @@ snapshots:
       - supports-color
 
   set-cookie-parser@2.6.0: {}
-
-  set-cookie-parser@2.7.1: {}
 
   setprototypeof@1.2.0: {}
 
