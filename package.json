@@ -20,5 +20,8 @@
 	},
 	"workspaces": [
 		"packages/*"
-	]
+	],
+	"dependencies": {
+		"@types/node": "^20.11.24"
+	}
 }
