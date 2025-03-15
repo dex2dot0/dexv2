@@ -23,7 +23,7 @@ Last week I published an example plugin project that included an example of usin
 - [x] Multiple bundling options (unminifed and minified with source maps)
 - [x] Shared logic using the power of PNPM Workspaces (DRY)
 
-**Note** If you go the StackBlitz route, you will have to create a fork of the project. You can sign up for free and use a cloud dev machine for a set number of hours per month. This is a great option if you just want to play around for a while without having to setup everything on your local machine, or if you say maybe you find yourself in one of those situations where your work station is locked down like Fort Knox and you can't install anything. ☜(꒡⌓꒡)
+**Note** If you go the StackBlitz route, you will have to create a fork of the project. You can sign up for free and use a cloud dev machine for a set number of hours per month. This is a great option if you just want to play around for a while without having to setup everything on your local machine, or if maybe you find yourself in one of those situations where your work station is locked down like Fort Knox and you can't install anything. ☜(꒡⌓꒡)
 
 ## Monorepo Overview
 
