@@ -13,9 +13,9 @@
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
-    "aws-cdk-lib": "2.171.1",
+    "aws-cdk-lib": "2.179.0",
     "constructs": "10.3.0",
-    "sst": "2.47.3",
+    "sst": "2.48.5",
     "typescript": "^5.4.5"
   },
   "workspaces": [
