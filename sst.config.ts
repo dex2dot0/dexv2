@@ -3,6 +3,7 @@ import { DNS } from './stacks/DNS';
 import { BaseApi } from './stacks/BaseApi';
 import { Frontend } from './stacks/Frontend';
 import { DexBlog } from './stacks/Blog';
+import { RandomApi } from './stacks/RandomApi';
 
 export default {
 	config(_input) {
@@ -17,5 +18,6 @@ export default {
 		app.stack(BaseApi);
 		app.stack(Frontend);
 		app.stack(DexBlog);
+		app.stack(RandomApi);
 	},
 } satisfies SSTConfig;

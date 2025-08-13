@@ -1,7 +1,7 @@
 import { StackContext, Api, use } from 'sst/constructs';
 import { DNS } from './DNS';
 
-export function BaseApi({ app, stack }: StackContext) {
+export function RandomApi({ app, stack }: StackContext) {
 	const dns = use(DNS);
 
 	const api = new Api(stack, 'myRandomApi', {
