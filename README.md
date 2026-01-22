@@ -4,11 +4,21 @@ This is my personal website where I plan to just generally mess around and exper
 
 ## Tech Stack
 
+### Project
+
+- [SST V3](https://sst.dev.docs) - Serverless Stack for Fullstack Apps
+- Monorepo
+- AWS via SST & [Pulumi](https://www.pulumi.com/)
+
 ### Main Frontend
 
-- [SST](sst.dev) - Serverless Stack Toolkit V3
 - [SvelteKit](https://kit.svelte.dev/) - Svelte Awesomeness
 - [Skeleton](https://www.skeleton.dev/) - UI Toolkit for Svelte using [TailwindCSS](https://tailwindcss.com/)
+
+### Blog Frontend
+
+- [Astro](https://astro.build/) - The Modern Static Site Builder
+- [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS Framework
 
 ### Backend
 
