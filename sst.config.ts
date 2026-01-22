@@ -1,9 +1,5 @@
 /// <reference path="./.sst/platform/config.d.ts" />
 
-import { baseApi } from './infra/baseApi.js';
-import { portfolioFrontend } from './infra/portfolioFrontend.js';
-import { blogFrontend } from './infra/blogFrontend.js';
-
 export default $config({
 	app(input) {
 		return {
@@ -19,6 +15,10 @@ export default $config({
 		};
 	},
 	async run() {
+		const { baseApi } = await import('./infra/baseApi.js');
+		const { portfolioFrontend } = await import('./infra/portfolioFrontend.js');
+		const { blogFrontend } = await import('./infra/blogFrontend.js');
+
 		const baseDomain = 'dexv2.com';
 
 		const zone = $app.stage === 'production' ? baseDomain : `${$app.stage}.${baseDomain}`;
