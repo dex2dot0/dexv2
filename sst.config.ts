@@ -1,5 +1,9 @@
 /// <reference path="./.sst/platform/config.d.ts" />
 
+import { baseApi } from './infra/baseApi.js';
+import { portfolioFrontend } from './infra/portfolioFrontend.js';
+import { blogFrontend } from './infra/blogFrontend.js';
+
 export default $config({
 	app(input) {
 		return {
@@ -24,48 +28,17 @@ export default $config({
 				: `www.${$app.stage}.${baseDomain}`;
 
 		// APIs
-		const api = new sst.aws.ApiGatewayV2('BaseApi', {
-			domain: `api.${zone}`,
-		});
-		api.route('GET /', 'packages/functions/src/lambda.handler');
-
-		const randomApi = new sst.aws.ApiGatewayV2('RandomApi');
-		randomApi.route('GET /', 'packages/functions/src/lambda.handler');
+		const api = baseApi(zone);
 
 		// Sites
-		const frontend = new sst.aws.SvelteKit('Frontend', {
-			path: 'packages/frontend',
-			domain: {
-				name: zone,
-				redirects: [domainAlias],
-			},
-			buildCommand: 'pnpm build',
-			dev: {
-				command: 'pnpm dev',
-			},
-		});
-
-		const blog = new sst.aws.Astro('DexBlog', {
-			path: 'packages/blog',
-			domain: {
-				name: `blog.${zone}`,
-				redirects: [`www.blog.${zone}`],
-			},
-			buildCommand: 'pnpm build',
-			dev: {
-				command: 'pnpm dev',
-			},
-			environment: {
-				URL: `https://blog.${zone}`,
-			},
-		});
+		const portfolioSite = portfolioFrontend(zone, domainAlias);
+		const blogSite = blogFrontend(zone);
 
 		return {
 			Zone: zone,
-			FrontendUrl: frontend.url,
+			PortfolioUrl: portfolioSite.url,
 			ApiEndpoint: api.url,
-			RandomApiEndpoint: randomApi.url,
-			BlogUrl: blog.url,
+			BlogUrl: blogSite.url,
 		};
 	},
 });
