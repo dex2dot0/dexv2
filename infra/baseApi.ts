@@ -1,8 +1,10 @@
-export const baseApi = (zone: string) => {
+export const baseApi = (zone: string, hostedZoneId: string) => {
 	const api = new sst.aws.ApiGatewayV2('BaseApi', {
 		domain: {
 			name: `api.${zone}`,
-			dns: sst.aws.dns(),
+			dns: sst.aws.dns({
+				zone: hostedZoneId,
+			}),
 		},
 	});
 	api.route('GET /', 'packages/functions/src/lambda.handler');
