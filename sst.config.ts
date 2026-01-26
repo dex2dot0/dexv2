@@ -20,7 +20,6 @@ export default $config({
 		const { blogFrontend } = await import('./infra/blogFrontend.js');
 
 		const baseDomain = 'dexv2.com';
-		const hostedZoneId = process.env.AWS_HOSTED_ZONE_ID!;
 
 		const zone = $app.stage === 'production' ? baseDomain : `${$app.stage}.${baseDomain}`;
 		const domainAlias =
@@ -29,11 +28,11 @@ export default $config({
 				: `www.${$app.stage}.${baseDomain}`;
 
 		// APIs
-		const api = baseApi(zone, hostedZoneId);
+		const api = baseApi(zone);
 
 		// Sites
-		const portfolioSite = portfolioFrontend(zone, domainAlias, hostedZoneId);
-		const blogSite = blogFrontend(zone, hostedZoneId);
+		const portfolioSite = portfolioFrontend(zone, domainAlias);
+		const blogSite = blogFrontend(zone);
 		return {
 			Zone: zone,
 			PortfolioUrl: portfolioSite.url,

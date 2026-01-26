@@ -1,9 +1,10 @@
-export const blogFrontend = (zone: string, hostedZoneId: string) => {
+export const blogFrontend = (zone: string) => {
 	return new sst.aws.Astro('DexBlog', {
 		path: 'packages/blog',
 		domain: {
 			name: `blog.${zone}`,
 			redirects: [`www.blog.${zone}`],
+			dns: sst.aws.dns(),
 		},
 		buildCommand: 'pnpm build',
 		dev: {
