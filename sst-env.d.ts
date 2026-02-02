@@ -5,10 +5,6 @@
 
 declare module "sst" {
   export interface Resource {
-    "BaseApi": {
-      "type": "sst.aws.ApiGatewayV2"
-      "url": string
-    }
     "DexBlog": {
       "type": "sst.aws.Astro"
       "url": string

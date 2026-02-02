@@ -8,6 +8,7 @@ export default $config({
 			providers: {
 				aws: {
 					region: 'us-west-2',
+					profile: 'default',
 				},
 			},
 			// Avoid accidental data loss on prod
@@ -22,6 +23,8 @@ export default $config({
 
 		const baseDomain = 'dexv2.com';
 		const hostedZoneId = process.env.AWS_HOSTED_ZONE_ID!;
+		console.log('Using Hosted Zone ID:', hostedZoneId);
+		console.log('Stage:', $app.stage);
 
 		const zone = $app.stage === 'production' ? baseDomain : `${$app.stage}.${baseDomain}`;
 		const domainAlias =

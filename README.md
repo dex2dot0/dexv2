@@ -22,8 +22,20 @@ This is my personal website where I plan to just generally mess around and exper
 
 ### Backend
 
-<<<<<<< Updated upstream
-TBD
-=======
-TBD..
->>>>>>> Stashed changes
+TBD...
+
+## Setting Environment Variables
+
+Run the following commands
+
+Windows
+
+```cmd
+set YOUR_ENV_VAR_NAME=your_env_var_value && pnpm exec sst deploy
+```
+
+Linux / MacOS
+
+```bash
+SOME_ENV_VAR=FOO sst deploy
+```
