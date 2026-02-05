@@ -16,8 +16,6 @@ export default $config({
 		};
 	},
 	async run() {
-		require('dotenv').config();
-		const { baseApi } = await import('./infra/baseApi.js');
 		const { portfolioFrontend } = await import('./infra/portfolioFrontend.js');
 		const { blogFrontend } = await import('./infra/blogFrontend.js');
 
@@ -32,16 +30,12 @@ export default $config({
 				? `www.${baseDomain}`
 				: `www.${$app.stage}.${baseDomain}`;
 
-		// APIs
-		const api = baseApi(zone, hostedZoneId);
-
 		// Sites
 		const portfolioSite = portfolioFrontend(zone, domainAlias, hostedZoneId);
 		const blogSite = blogFrontend(zone, hostedZoneId);
 		return {
 			Zone: zone,
 			PortfolioUrl: portfolioSite.url,
-			ApiEndpoint: api.url,
 			BlogUrl: blogSite.url,
 		};
 	},
