@@ -1,27 +1,26 @@
 {
-  "name": "app",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "sst bind vite dev",
-    "build": "sst build",
-    "deploy": "sst deploy",
-    "delete": "sst remove",
-    "console": "sst console",
-    "typecheck": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "@tsconfig/node22": "^22.0.0",
-    "aws-cdk-lib": "2.179.0",
-    "constructs": "10.3.0",
-    "sst": "2.48.5",
-    "typescript": "^5.4.5"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "dependencies": {
-    "@types/node": "^20.11.24"
-  }
+	"name": "app",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "sst dev --mode mono",
+		"diff": "sst diff",
+		"deploy": "sst deploy --mode mono",
+		"delete": "sst remove",
+		"refresh": "sst refresh",
+		"console": "sst console",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@tsconfig/node22": "^22.0.0",
+		"sst": "^3.17.25",
+		"typescript": "^5.4.5"
+	},
+	"workspaces": [
+		"packages/*"
+	],
+	"dependencies": {
+		"@types/node": "^20.11.24"
+	}
 }

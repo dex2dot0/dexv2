@@ -1,6 +1,6 @@
 {
 	"extends": "@tsconfig/node22/tsconfig.json",
-	"exclude": ["packages"],
+	"exclude": ["packages", "stacks"],
 	"compilerOptions": {
 		"module": "ESNext",
 		"moduleResolution": "node"
