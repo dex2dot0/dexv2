@@ -1,7 +1,7 @@
 export const portfolioFrontend = (
 	zone: string,
 	domainAlias: string,
-	hostedZoneId: string
+	hostedZoneId: string,
 ) => {
 	return new sst.aws.SvelteKit('Frontend', {
 		path: 'packages/frontend',
@@ -15,6 +15,9 @@ export const portfolioFrontend = (
 		buildCommand: 'pnpm build',
 		dev: {
 			command: 'pnpm dev',
+		},
+		server: {
+			runtime: 'nodejs22.x',
 		},
 	});
 };

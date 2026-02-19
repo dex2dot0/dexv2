@@ -6,8 +6,9 @@
 	"scripts": {
 		"dev": "sst dev --mode mono",
 		"diff": "sst diff",
-		"deploy": "sst deploy",
+		"deploy": "sst deploy --mode mono",
 		"delete": "sst remove",
+		"refresh": "sst refresh",
 		"console": "sst console",
 		"typecheck": "tsc --noEmit"
 	},

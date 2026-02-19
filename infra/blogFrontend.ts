@@ -15,5 +15,16 @@ export const blogFrontend = (zone: string, hostedZoneId: string) => {
 		environment: {
 			URL: `https://blog.${zone}`,
 		},
+		server: {
+			install: [
+				'fast-xml-parser',
+				'picocolors',
+				'zod',
+				'seroval',
+				'seroval-plugins',
+				'piccolore',
+			],
+			runtime: 'nodejs22.x',
+		},
 	});
 };
