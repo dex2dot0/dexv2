@@ -12,7 +12,7 @@ export default $config({
 				},
 			},
 			// Avoid accidental data loss on prod
-			removal: input.stage === 'production' ? 'retain' : 'remove',
+			removal: input.stage === 'main' ? 'retain' : 'remove',
 		};
 	},
 	async run() {
@@ -24,11 +24,9 @@ export default $config({
 		console.log('Using Hosted Zone ID:', hostedZoneId);
 		console.log('Stage:', $app.stage);
 
-		const zone = $app.stage === 'production' ? baseDomain : `${$app.stage}.${baseDomain}`;
+		const zone = $app.stage === 'main' ? baseDomain : `${$app.stage}.${baseDomain}`;
 		const domainAlias =
-			$app.stage === 'production'
-				? `www.${baseDomain}`
-				: `www.${$app.stage}.${baseDomain}`;
+			$app.stage === 'main' ? `www.${baseDomain}` : `www.${$app.stage}.${baseDomain}`;
 
 		// Sites
 		const portfolioSite = portfolioFrontend(zone, domainAlias, hostedZoneId);
