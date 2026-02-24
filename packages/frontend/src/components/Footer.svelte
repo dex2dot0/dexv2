@@ -2,6 +2,7 @@
 	import Linkedin from './brand-logos/Linkedin.svelte';
 	import Github from './brand-logos/Github.svelte';
 	import Discord from './brand-logos/Discord.svelte';
+	import YT from './brand-logos/YT.svelte';
 
 	let logoClassName =
 		'w-12 h-12 fill-500 dark:fill-tertiary-500 hover:fill-tertiary-700 dark:hover:fill-tertiary-300 transition-colors';
@@ -38,6 +39,14 @@
 					class="ml-4"
 				>
 					<Discord className={logoClassName} />
+				</a>
+				<a
+					href="https://www.youtube.com/@dex2dot0"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="ml-4"
+				>
+					<YT className={logoClassName} />
 				</a>
 			</div>
 		</div>

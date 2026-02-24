@@ -46,4 +46,10 @@ export const SOCIALS: Socials = [
 		TEXT: 'Cliff Johnson',
 		HREF: 'https://www.linkedin.com/in/cliffjjohnson/',
 	},
+	{
+		NAME: 'YouTube',
+		ICON: 'youtube',
+		TEXT: '@dex2dot0',
+		HREF: 'https://www.youtube.com/@dex2dot0',
+	},
 ];
