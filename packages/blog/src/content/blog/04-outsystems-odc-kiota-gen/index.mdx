@@ -1,0 +1,88 @@
+---
+title: 'OutSystems ODC Kiota Generated API Clients'
+summary: 'Generate OutSystems ODC external library code using an open source Kiota generator.'
+date: 'May 21 2026'
+draft: false
+tags:
+  - OutSystems
+  - Open Source
+---
+
+## TLDR
+
+- [x] OpenAPI Generators are awesome!
+- Use the new generator to:
+  - [x] Save AOs
+  - [x] Version API integrations in OutSystems for a more formal SDLC
+
+I really like OpenAPI for a lot of reasons but probably my #1 reason is the tooling ecosystem around OpenAPI. There is a lot of great things you can automate with some really incredible open source generators.
+I may make some posts in the future about other tools in the ecosystem but this post will focus on [Kiota](https://learn.microsoft.com/en-us/openapi/kiota/overview).
+
+## Kiota and Generators
+
+Microsoft maintains the Kiota generator which is open sourced through an MIT license. If you want to check out the [source code](https://github.com/microsoft/kiota) or star on GitHub.
+
+The first question you might ask if you are not familiar - what is an OpenAPI client generator and what does it do?
+
+That's an important question in order to understand why using a generator is so useful. A generator itself is something that will accept an OpenAPI specification (and in cases with other generators a different API spec)
+and generate some code using just the specification. That could be an API client, a server, or documentation. The main idea being the generator produces a useful asset that can then be used in some meaningful way.
+Swagger for example, which is probably the most widely used documentation site for APIs and one OutSystems folks would be familiar with, is a generator. It takes an OpenAPI specification and generates a website that documents
+the API, allows developers to make requests against the API, and more.
+
+Okay, back to Kiota... Kiota is one of many such generators and has great support in the world of dotnet. Since [OutSystems](https://www.outsystems.com/) external libraries are C# based, Kiota was a natural fit for this use case.
+
+## The OutSystems Kiota Generator
+
+You can find the code for the generator at [GitHub](https://github.com/dex2dot0/ODCForgeAssets/blob/main/KiotaOutSystems.Generator/README.md) which is free and open-source.
+
+While Kiota does the heavy lifting for sure here, this generator adds an extra layer to map the Kiota client and assets to OutSystems supported operations supported by the
+[OutSystems external library SDK](https://github.com/dex2dot0/ODCForgeAssets/blob/main/KiotaOutSystems.Generator/README.md). Namely, generating server actions for each endpoint in the OpenAPI specification
+you use as well as structures and a manifest file.
+
+For documentation on the generator itself, refer to the README on GitHub.
+
+### Why Use This Generator?
+
+#### Saving AOs
+
+OutSystems [charges](https://success.outsystems.com/support/licensing/application_objects/) for "each REST API method you create or consume within each app or library counts as 1 AO". That adds up if you do a lot of
+API integration work.
+
+#### API Versioning
+
+OutSystems [integrates with OpenAPI already](https://success.outsystems.com/documentation/outsystems_developer_cloud/integration_with_external_systems/use_rest_apis_in_your_app/consume_one_or_more_rest_api_methods/),
+which is great. However, there is no versioning involved in this process. While you can set up the REST APIs being consumed in a library and version that way, you don't:
+
+- Get any control over what it generates. With this Kiota generator, you can customize as needed (if you are comfortable with C#).
+- Get a repeatable generation process. You can run this generator in CI/CD for example with a publishing pipeline to make things more automated.
+- Get better change history. While OutSystem's supports comparing publishes, I personally much prefer GitHub.
+- Get earlier detection of breaking API changes, especially if you are testing the generated API client.
+- Get more flexibility. A generated client provides more opportunity to add additional functionality like auth handling, retries, logging, custom headers, and other HTTP behavior.
+- Stay working in code. This is more dev focused which may be a downside in some cases, but in others it is definitely an upside.
+
+#### SDLC and Governance
+
+For more developer capable OutSystems shops, SDLC and governance are important. Having the generated client in source control gives you a more formal process around review, release, and rollback.
+
+### Who Shouldn't Use This Generator?
+
+You probably should avoid using this generator if:
+
+- You are not comfortable with C#.
+- You are not comfortable with the [OutSystems external library publish & release process](https://success.outsystems.com/documentation/outsystems_developer_cloud/building_apps/extend_your_apps_with_custom_code/#upload-and-publish-the-external-logic)
+
+## Getting Started With The Generator
+
+If you would like to use the generator, fork the [repo](https://github.com/dex2dot0/ODCForgeAssets/tree/main) and follow the instructions for the Kiota generator. The repo has additional tools for assisting with the publishing
+process that are documented more in the root README.
+
+You can see an [example website](https://personal-xehmfvxs-dev.outsystems.app/KiotaGenerator/example) that is using the generator and the external library as an additional reference. The generated JSONPlaceholder library
+itself is also available in forge if you'd like to install it directly and see the output.
+
+## What's Next?
+
+While building the generator and subsequent example site, I thought it would be nice to also use a generator to generate a client for the frontend to cover the bases. While this is certainly possible, it is more involved
+with the current state of OutSystems and frontend code publishing. There is currently just not a good pipeline for doing the same kind of thing for frontend code that wouldn't involve a lot of manual work and would lack the
+same benefits discussed here.
+
+Hopefully, OutSystems introduces mechanisms in the future that would allow for such a pipeline and then maybe we'll have a part 2 to this post.
